@@ -22,7 +22,7 @@
 import { useRouter } from 'expo-router';
 import { collection, getDocs } from 'firebase/firestore';
 import { useContext, useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, ImageBackground, Platform, View } from 'react-native';
+import { ActivityIndicator, Animated, FlatList, ImageBackground, Platform, Text, View } from 'react-native';
 import CourseList from '../../components/Home/CourseList';
 import CourseProgress from '../../components/Home/CourseProgress';
 import Header from '../../components/Home/Header';
@@ -36,13 +36,42 @@ export default function Home() {
   const [courseList, setCourseList] = useState([]);
   const [loading, setLoading] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
+
+  const [showLevelUp, setShowLevelUp] = useState(false);
+  const [fadeAnim] = useState(new Animated.Value(0));
+
   const router = useRouter();
 
+  // useEffect(() => {
+  //   if (userDetail === null) {
+  //     router.replace('/auth/signIn');
+  //   }
+  // }, [userDetail]);
+
   useEffect(() => {
-    if (userDetail === null) {
-      router.replace('/auth/signIn');
+  if (userDetail) {
+    const oldLevel = userDetail?.level || 0;
+    const newLevel = Math.floor((userDetail.points || 0) / 100) + 1;
+
+    if (newLevel > oldLevel) {
+      setShowLevelUp(true);
+      Animated.sequence([
+        Animated.timing(fadeAnim, {
+          toValue: 1,
+          duration: 500,
+          useNativeDriver: true,
+        }),
+        Animated.delay(3000),
+        Animated.timing(fadeAnim, {
+          toValue: 0,
+          duration: 500,
+          useNativeDriver: true,
+        }),
+      ]).start(() => setShowLevelUp(false));
     }
-  }, [userDetail]);
+  }
+}, [userDetail]);
+
 
   useEffect(() => {
     if (initialLoad) {
@@ -89,6 +118,25 @@ export default function Home() {
         ListHeaderComponent={
           <View style={{ padding: 25, paddingTop: Platform.OS === 'ios' ? 55 : 25 }}>
             <Header />
+            {showLevelUp && (
+  <Animated.View style={{
+    opacity: fadeAnim,
+    backgroundColor: Colors.SUCCESS,
+    padding: 15,
+    borderRadius: 10,
+    marginBottom: 10,
+    elevation: 5,
+  }}>
+    <Text style={{
+      color: Colors.WHITE,
+      fontSize: 16,
+      textAlign: 'center',
+      fontFamily: 'outfit-bold',
+    }}>
+      Felicitări! Ai avansat la nivelul {Math.floor((userDetail?.points || 0) / 100) + 1}!
+    </Text>
+  </Animated.View>
+)}
               <View>
                 <CourseProgress courseList={courseList} /> 
                 <PracticeSection />

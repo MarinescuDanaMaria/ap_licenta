@@ -2,11 +2,12 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { useRouter } from 'expo-router';
 import { signOut } from 'firebase/auth';
 import { useContext, useState } from 'react';
-import { FlatList, Image, Modal, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
+import { FlatList, Image, ImageBackground, Modal, Platform, Pressable, StyleSheet, Text, View } from 'react-native';
 import { auth } from '../../config/firebaseConfig';
 import Colors from '../../constants/Colors';
 import { ProfileMenu } from '../../constants/Option';
 import { UserDetailContext } from '../../context/UserDetailContext';
+
 
 export default function Profile() {
   const { userDetail, setUserDetail } = useContext(UserDetailContext);
@@ -70,8 +71,10 @@ export default function Profile() {
   };
 
   return (
-    <View style={styles.container}>
-      {/* Header Profile */}
+     <ImageBackground
+          source={require('../../assets/images/gradient.png')}
+          style={styles.container}
+        >
       <Text style={styles.headerTitle}>Profil</Text>
 
       {/* Profile Image and Info */}
@@ -183,14 +186,15 @@ export default function Profile() {
           </View>
         </View>
       </Modal>
-    </View>
+    </ImageBackground>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.WHITE,
+    //backgroundColor: Colors.WHITE,
+    backgroundColor: '#e2e8f0',
     padding: 20,
     paddingTop: Platform.OS === 'ios' ? 55 : 20,
   },
@@ -276,7 +280,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     padding: 15,
     borderRadius: 10,
-    backgroundColor: Colors.BG_GRAY,
+    //backgroundColor: Colors.BG_GRAY,
+    backgroundColor: Colors.WHITE,
     marginVertical: 5,
   },
   menuIcon: {

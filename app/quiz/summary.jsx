@@ -181,6 +181,23 @@ export default function QuizSummary() {
           }}
           loading={loading}
         />
+        <View style={{ marginTop: 25 }}>
+          <Text style={{ fontFamily: 'outfit-bold', fontSize: 25 }}>Rezumat</Text>
+
+          {Object.entries(quizResult).map(([key, quizItem], index) => (
+            <View key={index} style={{
+              padding: 15,
+              borderWidth: 1,
+              marginTop: 5,
+              borderRadius: 15,
+              backgroundColor: quizItem?.isCorrectquiz == true ? Colors.LIGHT_GREEN : Colors.LIGHT_RED,
+              borderColor: quizItem?.isCorrectquiz == true ? Colors.GREEN : Colors.RED
+            }}>
+              <Text style={{ fontFamily: 'outfit', fontSize: 20 }}>{quizItem.question}</Text>
+              <Text style={{ fontFamily: 'outfit', fontSize: 15 }}>R: {quizItem?.correctAns} </Text>
+            </View>
+          ))}
+        </View>
       </View>
     </ScrollView>
   );

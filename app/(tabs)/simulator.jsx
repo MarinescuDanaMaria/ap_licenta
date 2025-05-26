@@ -354,7 +354,7 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   subheader: {
-    fontSize: 16,
+    fontSize: 17,
     fontFamily: 'outfit',
     color: Colors.GRAY,
     paddingHorizontal: 20,
