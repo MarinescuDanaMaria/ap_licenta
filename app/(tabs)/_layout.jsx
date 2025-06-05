@@ -29,8 +29,18 @@ export default function TabLayout() {
             tabBarIcon:({color,size})=>
              <Ionicons name="analytics-outline" size={size} color={color} />,
              tabBarLabel:'Hartă'
+             // "map-outline"
             
         }}/>
+         <Tabs.Screen
+        name="simulator"
+        options={{
+          tabBarIcon: ({ color, size }) => (
+            <Ionicons name="lock-open-outline" size={size} color={color} />
+          ),
+          tabBarLabel: 'Simulator',
+        }}
+      />
         <Tabs.Screen name="profile"
         options=
         {{

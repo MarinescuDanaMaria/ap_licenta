@@ -5,7 +5,7 @@ export const coursesData = [
     description:
       "Un curs introductiv despre securitatea informației, care acoperă conceptele fundamentale, tipurile de atacuri cibernetice, actorii implicați și strategiile de apărare. Este ideal pentru începători care vor să înțeleagă cum pot proteja informațiile în era digitală.",
     banner_image: "/banner3.png",
-    achievementBadge: "Începător în securitate",
+    achievementBadge: "secure-beginner",
     summary: `Atacurile asupra securității informației au crescut exponențial în ultimii ani, în ciuda miliardelor de dolari cheltuiți anual pentru securitate. Niciun sistem informatic nu este complet imun sau 100% sigur.
 
 Motivele pentru care este greu să ne apărăm de atacurile moderne includ:
@@ -1275,7 +1275,7 @@ Vigilență constantă, deoarece apar atacuri noi în fiecare zi – exploateaz�
     title:"Securitatea personală",
     description:"Acest curs oferă o introducere practică în protejarea informațiilor personale în mediul digital, abordând principalele tipuri de atacuri informatice precum spargerea parolelor, ingineria socială, furtul de identitate și riscurile din rețelele sociale. Cursul propune soluții concrete pentru prevenirea acestor amenințări, incluzând utilizarea parolelor puternice, a managerilor de parole și a unui comportament atent online.",
     banner_image:"/banner5.png",
-    achievementBadge: "Securitate personală",
+    achievementBadge: "securitate personală",
     summary:`🔐 1. Parolele și autentificarea:
 Când utilizatorii se conectează la un calculator sau un site web, li se cere o informație care să le confirme identitatea – de obicei o parolă.
 
@@ -2686,7 +2686,7 @@ Mai bine începi cu totul închis și activezi doar ce e necesar
     title:"Securitatea informatică",
     description:"Acest curs oferă o introducere practică în securitatea informatică.",
     banner_image:"/cap3.png",
-    achievementBadge: "Securitate informatică",
+    achievementBadge: "securitate informatică",
     summary:` rezumat curs 3 `,
     chapters:[{
       title:"Atacuri cu ajutorul Malware-ului",
@@ -4026,10 +4026,9 @@ Tipuri de backup:
     title:"Securitatea pe internet",
     description:"Acest curs oferă o introducere practică în securitatea pe internet",
     banner_image:"/cap4.jpg",
-    achievementBadge: "Securitate pe internet",
+    achievementBadge: "securitate pe internet",
     summary:` rezumat curs 4 `,
-    chapters:[
-      {
+    chapters:[{
       title:"Cum funcționează internetul ?",
       subsections:[
       {
@@ -4143,284 +4142,43 @@ Atașamentele sunt fișiere adăugate la emailuri (ex: documente Word, poze, tab
       }
     ]
     },
-     {
+    {
       title:"Riscuri ale securității pe internet",
-      subsections:[
-        {
+      subsections:[{
         name:"Introducere",
-        content:`Utilizarea Internetului implică mai multe riscuri, printre care:
-- vulnerabilități ale browserului 
-- reclame malițioase (malvertising)
-- descărcări automate periculoase (drive-by)
-- cookie-uri
-- riscuri asociate emailului`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Care sunt câteva riscuri asociate utilizării Internetului?",
-        back: "Vulnerabilități ale browserului, reclame malițioase (malvertising), descărcări automate periculoase, cookie-uri și riscuri legate de email."
-      }
-    ]
-  }],
-        qa:[{
-    question: "Ce este un risc comun legat de reclame online?",
-    answer: "Malvertising – reclame malițioase care pot infecta dispozitivul fără acțiunea utilizatorului."
-  }]
+        content:``,
+        flashcards:[],
+        qa:[]
       },
       {
         name:"🧱 Vulnerabilități ale browserului",
-        content:`La început, conținutul web era static – doar text și imagini. Pe măsură ce utilizatorii au cerut conținut dinamic (ex: animații, conținut personalizat), HTML-ul simplu nu a mai fost suficient. Soluțiile au fost:
-- coduri de tip script descărcate de pe server
-
-- componente suplimentare instalate în browser: extensii, plug-in-uri și add-on-uri
-
-
-🧾 Scripting Code – JavaScript
-Una dintre cele mai populare metode de a adăuga funcționalitate dinamică este JavaScript. Codul JavaScript este inclus direct în paginile HTML. Când utilizatorul accesează pagina, codul este descărcat și executat de browserul său.
-⚠️ Riscuri cu JavaScript:
-- poate colecta și trimite date fără acordul utilizatorului
-
-- poate trimite emailuri sau comenzi periculoase
-
-- poate fi folosit pentru a accesa rețeaua și a ataca sistemul utilizatorului
-
-
-Pentru a preveni abuzurile, JavaScript este limitat prin:
-- limitarea capabilităților (nu poate accesa fișierele locale)
-
-- sandboxing (executare într-un mediu restricționat)
-
-- same origin policy (nu poate accesa date din surse diferite)
-
-
-🧩 Extensii, Plug-In-uri și Add-On-uri
-Toate aceste componente adaugă funcționalități noi browserului, dar pot deveni puncte vulnerabile:
-- Extensii: scrise de obicei în JavaScript, adaugă funcții specifice. Sunt dependente de browser.
-
-- Plug-In-uri: programe externe care rulează în browser (ex: pentru audio, video). Exemple: Java, Flash, Adobe Reader.
-
-- Add-On-uri: modifică întregul comportament al browserului, nu doar o pagină. Pot adăuga bare de unelte, monitoriza taburi și conținutul tuturor paginilor.
-
-
-🛑 Riscuri:
-- Unele pot avea vulnerabilități exploatate de atacatori (ex: Flash)
-
-
-- Pot permite rularea de cod malițios
-
-
-- Se pot folosi pentru a controla complet calculatorul
-
-
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "De ce a devenit necesar JavaScript în paginile web?",
-        back: "Pentru a adăuga funcționalitate dinamică precum animații și conținut personalizat, deoarece HTML-ul simplu nu mai era suficient."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Ce riscuri poate implica rularea codului JavaScript?",
-        back: "Poate colecta date fără acord, trimite comenzi periculoase sau ataca sistemul utilizatorului."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 3",
-    cards: [
-      {
-        front: "Care este diferența dintre extensii, plug-in-uri și add-on-uri?",
-        back: "Extensiile adaugă funcții specifice, plug-in-urile rulează programe externe, iar add-on-urile modifică comportamentul general al browserului."
-      }
-    ]
-  }],
-        qa:[{
-    question: "Cum este securizat JavaScript pentru a preveni abuzurile?",
-    answer: "Prin limitarea accesului la fișiere, rulare în sandbox și politica same origin."
-  },
-  {
-    question: "Ce vulnerabilitate majoră este asociată cu plug-in-urile?",
-    answer: "Pot permite rularea de cod malițios și pot fi exploatate de atacatori, precum în cazul Flash."
-  },
-  {
-    question: "Ce rol au extensiile în browser?",
-    answer: "Extensiile scrise în JavaScript adaugă funcționalități specifice și sunt dependente de browser."
-  }]
+        content:``,
+        flashcards:[],
+        qa:[]
       },
     {
         name:"⚠️ Malvertising – Reclame malițioase",
-        content:`Malvertising-ul apare atunci când atacatorii folosesc rețele de reclame pentru a distribui viruși către utilizatorii care accesează site-uri legitime.
-Cum funcționează:
-- Site-urile apelează la rețele externe de reclame.
-
-- Acestea pot fi compromise de atacatori, care livrează reclame cu malware (troieni, ransomware etc.).
-
-- Utilizatorii nici nu trebuie să dea click – simpla afișare poate activa descărcarea.
-
-Avantaje pentru atacatori:
-- Folosesc site-uri mari și de încredere pentru a păcăli utilizatorii.
-
-- Administratorii site-urilor nu știu ce tip de reclame se afișează.
-
-- Conținutul publicitar se rotește constant, deci e greu de identificat sursa exactă.
-
-- Se pot plasa reclame direcționate pe baza locației sau a cuvintelor-cheie căutate.
-
-
-Ex: Cineva care caută „alocație guvernamentală pentru călătorii” poate fi țintit cu un anunț malițios aparent legitim.
-
-🔐 Prevenirea malvertising-ului
-Este dificil de controlat, deoarece:
-- Utilizatorii nu știu că sunt atacați.
-
-- Site-urile nu știu ce conținut oferă rețelele terțe de reclame.
-
-- Tehnologii vechi precum Adobe Flash sunt deseori exploatate și încă folosite.
-
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Ce este malvertising-ul?",
-        back: "Este o tehnică prin care atacatorii folosesc rețele de reclame pentru a distribui malware către utilizatori prin site-uri legitime."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "De ce este malvertising-ul greu de prevenit?",
-        back: "Pentru că utilizatorii și administratorii nu știu că sunt atacați, iar conținutul publicitar se schimbă constant și provine de la rețele externe."
-      }
-    ]
-  }],
-        qa:[ {
-    question: "Cum pot atacatorii infecta utilizatori fără ca aceștia să dea click?",
-    answer: "Prin simpla afișare a unei reclame compromise care activează automat descărcarea de malware."
-  },
-  {
-    question: "Ce tip de tehnologii învechite sunt adesea exploatate în malvertising?",
-    answer: "Adobe Flash și alte tehnologii vechi încă folosite de unele site-uri."
-  }]
+        content:``,
+        flashcards:[],
+        qa:[]
       },
     {
         name:": ⚠️ Drive-By Downloads",
-        content:`Un drive-by download apare atunci când un site web legitim este infectat cu conținut malițios, iar utilizatorii devin victime doar accesând pagina — fără să dea click sau să descarce nimic.
-- Atacatorii exploatează vulnerabilități din serverul web pentru a injecta cod periculos.
-
-- Codul este adesea invizibil (ex: un iframe de zero pixeli – cadru HTML ascuns).
-
-- Dacă browserul utilizatorului este vulnerabil, scriptul descarcă automat malware pe calculatorul acestuia.
-
-`,
-        flashcards:[ {
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Ce este un atac de tip drive-by download?",
-        back: "Este un atac în care utilizatorul descarcă malware automat doar accesând un site infectat, fără a da click sau a descărca ceva în mod intenționat."
-      }
-    ]
-  }],
-        qa:[{
-    question: "Cum reușesc atacatorii să execute un drive-by download?",
-    answer: "Prin injectarea unui cod invizibil (ex: iframe de 0 pixeli) într-un site legitim și exploatarea vulnerabilităților browserului utilizatorului."
-  }]
+        content:``,
+        flashcards:[],
+        qa:[]
       },
     {
         name:"🍪 Cookie-uri",
-        content:`HTML nu reține preferințele utilizatorilor, așa că site-urile folosesc cookie-uri – fișiere mici salvate pe calculatorul tău – pentru a memora setările, istoricul sau informațiile personale.
-Tipuri de cookie-uri:
-- First-party cookie: creat de site-ul pe care îl vizitezi, ex: preferințe de limbă.
-
-- Third-party cookie: plasate de rețele publicitare externe pentru a urmări activitatea ta pe mai multe site-uri.
-
-- Locally Shared Objects (LSO): cunoscute ca Flash cookies, pot stoca date mai mari și nu pot fi șterse ușor din browser.
-
-
-⚠️ Cookie-urile pot afecta confidențialitatea și securitatea. Ele pot fi folosite pentru a:
-- urmări obiceiurile de navigare
-
-- crea profiluri de utilizator
-
-- livra reclame direcționate
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Ce sunt cookie-urile și la ce folosesc?",
-        back: "Cookie-urile sunt fișiere mici salvate pe calculator pentru a memora preferințele, istoricul sau informațiile utilizatorului."
-      }
-    ]
-  }],
-        qa:[{
-    question: "Cum pot cookie-urile afecta confidențialitatea utilizatorului?",
-    answer: "Pot fi folosite pentru urmărirea activității online, crearea de profiluri și livrarea de reclame personalizate."
-  }]
+        content:``,
+        flashcards:[],
+        qa:[]
       },
     {
         name:"📧 Riscuri ale Emailului",
-        content:`Emailul este un vector principal pentru atacuri. Cele mai comune riscuri sunt:
-✉️ Spam
-- Emailuri nesolicitate trimise în masă (milioane zilnic).
-
-- Adesea conțin reclame pentru medicamente, împrumuturi, produse dubioase.
-
-- Costuri reduse pentru expeditori, dar impact mare: și un singur răspuns generează profit.
-
-🛑 Unele spamuri conțin text sub formă de imagine (image spam) pentru a evita filtrele automate.
-📎 Atașamente malițioase
-- Utilizatorii deschid fișiere nesigure primite prin email.
-
-- Aceste fișiere pot conține viruși care:
-    * se răspândesc la contactele tale
-    * preiau controlul asupra calculatorului
-    * se ascund sub pretexte precum: „Vezi pozele cu tine?”, „Info important despre uraganul de ieri”
-
-
-🔗 Linkuri ascunse (embedded hyperlinks)
-- Par să ducă spre site-uri legitime (ex: „Click aici pentru contul tău”), dar în realitate te redirecționează către site-ul atacatorului.
-
-- Site-ul fals colectează datele tale (parole, conturi).
-
-- Linkul poate afișa un text de încredere, dar duce în altă parte (ex: textul „www.onlineaccount.com” → duce de fapt la „attackers-dungeon.net”).
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Ce riscuri implică atașamentele malițioase din emailuri?",
-        back: "Pot conține viruși care se răspândesc, preiau controlul asupra calculatorului și se ascund sub pretexte înșelătoare."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Cum funcționează linkurile ascunse (embedded hyperlinks) în atacuri prin email?",
-        back: "Linkul pare legitim, dar redirecționează către un site fals care fură datele utilizatorului."
-      }
-    ]
-  }],
-        qa:[{
-    question: "Ce este spamul și de ce este eficient pentru atacatori?",
-    answer: "Emailuri nesolicitate trimise în masă, eficiente datorită costurilor reduse și șanselor mari de profit chiar și cu un singur răspuns."
-  },
-  {
-    question: "Cum evită unii atacatori filtrele antispam?",
-    answer: "Trimițând textul sub formă de imagine (image spam)."
-  }]
+        content:``,
+        flashcards:[],
+        qa:[]
       },]
       
     },
@@ -4429,549 +4187,33 @@ Tipuri de cookie-uri:
       subsections:[
       {
         name:"Introducere",
-        content:`Protejarea eficientă împotriva atacurilor începe cu securizarea calculatorului:
-- Actualizări (patch-uri)
-
-- Firewall personal
-
-- Antivirus
-
-- Controlul conturilor de utilizator (UAC)
-
-- Backup de date
-
-- Plan de recuperare după atac
-
-După ce calculatorul e securizat, urmează trei direcții principale de apărare:
-- Securizarea browserului web
-
-- Protecția emailului
-
-- Urmarea bunelor practici de securitate online
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Care sunt măsurile de bază pentru securizarea calculatorului?",
-        back: "Actualizări regulate, firewall personal, antivirus, controlul conturilor (UAC), backup de date și plan de recuperare."
-      }
-    ]
-  }],
-        qa:[{
-    question: "Care sunt cele trei direcții principale de apărare după securizarea calculatorului?",
-    answer: "Securizarea browserului web, protecția emailului și urmarea bunelor practici de securitate online."
-  }]
+        content:``,
+        flashcards:[],
+        qa:[]
       },
       {
         name:"🌐 Securizarea browserului web",
-        content:`Browserul este prima linie de apărare. Este important să:
-- configurezi setările de securitate
-
-- instalezi instrumente suplimentare de protecție
-
-🔧 Setări de configurare în browser
-
-Majoritatea browserelor moderne permit personalizarea securității:
-- Internet Explorer (IE) permitea definirea de „zone” cu nivele diferite de securitate pentru diverse site-uri. A fost înlocuit de Microsoft Edge.
-
-- Google Chrome oferă setări extinse pentru confidențialitate și securitate.
-
-
-⚙️ Setări de conținut în Google Chrome
-- Cookies: pot fi acceptate, refuzate sau șterse automat la închiderea browserului. Poți seta excepții pentru anumite site-uri.
-
-- JavaScript: poate fi activat sau blocat (cu excepții).
-
-- Plug-ins: pot fi blocate complet, selectiv sau pot cere permisiune înainte de a rula.
-
-- Pop-ups: pot fi blocate, permise sau controlate individual.
-
-- Unboxed plug-ins: utilizatorul poate permite sau bloca rularea directă a anumitor plug-in-uri (ex: video streaming).
-
-
-🔐 Setări avansate în Chrome
-- Parole și formulare: browserul poate cere permisiunea pentru a salva parole.
-
-- Descărcări: se poate alege locația implicită.
-
-- Ștergerea datelor de navigare: fișierele HTML pot fi șterse de pe disc.
-
-- Serviciu de corectare a URL-urilor: previne greșelile de tastare care duc către site-uri false (ex: typo squatting).
-
-- Sincronizare avansată: sincronizează setările și parolele pe toate dispozitivele conectate la contul Google.
-
-
-🔧 Extensii de securitate pentru browser
-
-Toate browserele majore permit instalarea de:
-- Extensii de reputație a site-ului – oferă indicii despre cât de sigur este un site (verde/roșu/galben).
-
-- Validare de plug-in-uri – avertizează dacă un plug-in este vulnerabil sau învechit.
-
-- URL expander – arată adresa completă a unui link scurtat (ex: goo.gl/...).
-
-- Trackere de site-uri – monitorizează ce site-uri te urmăresc și permit ștergerea rapidă a cookie-urilor.
-
-- Ad blocker – blochează reclame text și video.
-
-- Cookie stopper – controlează sau blochează cookie-uri de la terți.
-
-⚠️ Chiar dacă extensiile oferă un plus de securitate, trebuie folosite cu atenție.
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Ce setări de securitate oferă Google Chrome?",
-        back: "Poți controla cookies, JavaScript, plug-in-uri, pop-ups, parole, descărcări, datele de navigare și sincronizarea cu contul Google."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Ce tipuri de extensii pot îmbunătăți securitatea browserului?",
-        back: "Extensii de reputație a site-ului, validare plug-in-uri, URL expander, trackere, ad blocker și cookie stopper."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 3",
-    cards: [
-      {
-        front: "De ce este browserul considerat prima linie de apărare?",
-        back: "Pentru că este poarta de acces la conținut web și trebuie configurat corect pentru a preveni atacurile."
-      }
-    ]
-  }],
-        qa:[ {
-    question: "Ce opțiuni ai în Chrome pentru gestionarea cookie-urilor?",
-    answer: "Le poți accepta, respinge sau șterge automat, iar pentru unele site-uri poți seta excepții."
-  },
-  {
-    question: "Ce este un URL expander și cum ajută?",
-    answer: "Este o extensie care afișează adresa completă a linkurilor scurtate, prevenind accesul la site-uri înșelătoare."
-  },
-  {
-    question: "Ce trebuie avut în vedere când folosim extensii de securitate?",
-    answer: "Extensiile pot spori protecția, dar trebuie alese cu atenție pentru a nu introduce vulnerabilități."
-  }]
+        content:``,
+        flashcards:[],
+        qa:[]
       },
       {
         name:"✉️ Protecția emailului",
-        content:`Emailul este un canal frecvent folosit pentru atacuri cibernetice. Măsurile de apărare includ:
-- filtre anti-spam
-
-- configurarea opțiunilor de securitate
-
-- protecția atașamentelor
-
-🚫 Filtre anti-spam (Spam Filters)
-
-Spam-ul nu este doar deranjant, ci poate transporta malware. Aplicațiile anti-spam pot fi instalate:
-- pe calculatorul utilizatorului
-
-- la nivelul firmei sau al furnizorului de servicii de email
-
-Majoritatea spam-ului este blocat înainte să ajungă în inbox.
-
-Setări utile:
-- Blocked senders: listă neagră cu expeditori blocați.
-
-- Allowed senders: listă albă cu expeditori acceptați.
-
-- Blocked top-level domains: emailuri din anumite țări sau domenii pot fi blocate complet.
-
-
-⚙️ Setări de securitate în email
-
-🖥️ Email local (Outlook, Thunderbird etc.)
-- Reading pane: permite vizualizarea mesajelor fără a le deschide complet (scripturile nu se activează).
-
-- Block external content: blochează conținut extern (imagini, sunete) care se descarcă automat – folosit adesea de spammeri pentru a verifica dacă o adresă e validă.
-
-🌐 Email în browser (Webmail)
-- Setări de recuperare cont: număr de telefon sau email alternativ, notificări în caz de acces neautorizat.
-
-- Monitorizare activitate neobișnuită: verifică emailuri suspecte, locații diferite de acces, mesaje șterse brusc.
-
-- Verificarea setărilor generale: semnături, redirecționări, liste de contacte.
-
-📎 Atașamente
-
-Atașamentele pot conține cod malițios. Protecția se face prin:
-- Preview automat: unele clienți permit previzualizarea fără a deschide complet fișierul.
-
-- Protected View (Office): atașamentele Word, Excel, PowerPoint se deschid în mod securizat (read-only). Se recomandă să nu se apese pe “Enable Editing” fără verificarea sursei fișierului.
-
-⚠️ Important: oricât de banal ar părea un atașament, dacă vine din sursă necunoscută, tratează-l cu suspiciune.
-
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Cum ajută filtrele anti-spam la protejarea emailului?",
-        back: "Blochează automat mesajele nesolicitate care pot conține malware, înainte să ajungă în inbox."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Ce măsuri de securitate pot fi configurate în aplicațiile de email?",
-        back: "Reading pane, blocarea conținutului extern, verificarea activității suspecte și setări de recuperare cont."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 3",
-    cards: [
-      {
-        front: "Cum pot fi protejate atașamentele periculoase din emailuri?",
-        back: "Prin previzualizare automată, deschidere în mod securizat (Protected View) și evitarea opțiunii „Enable Editing”."
-      }
-    ]
-  }],
-        qa:[{
-    question: "Ce este lista 'Blocked senders'?",
-    answer: "O listă neagră cu expeditori ale căror mesaje sunt blocate automat."
-  },
-  {
-    question: "Cum pot fi identificate activitățile neobișnuite într-un cont de email web?",
-    answer: "Prin monitorizarea locațiilor de acces, emailuri suspecte sau mesaje șterse brusc."
-  },
-  {
-    question: "Ce recomandare importantă trebuie urmată în cazul atașamentelor necunoscute?",
-    answer: "Nu deschide și nu activa opțiuni precum 'Enable Editing' fără verificarea sursei fișierului."
-  }]
+        content:``,
+        flashcards:[],
+        qa:[]
       },
       {
         name:"✅ Cele mai bune practici de securitate pe Internet",
-        content:`Pentru a te proteja în timp ce folosești emailul sau navighezi pe Internet, urmează aceste reguli esențiale:
-
-📥 Descărcarea fișierelor
-- Descarcă doar de pe site-uri cunoscute și de încredere.
-
-- Verifică dacă ești pe site-ul corect (nu pe un fals cu aspect similar).
-
-- Alege opțiunea de a salva fișierul pe disc în loc să-l rulezi direct.
-Astfel, programele de securitate pot scana fișierul înainte să fie deschis.
-
-
-🍪 Controlul cookie-urilor
-- Folosește setările browserului pentru a gestiona cookie-urile.
-
-- Dacă blocarea completă afectează funcționarea site-urilor, setează browserul să șteargă toate cookie-urile când este închis.
-
-🕵️ Navigare privată
-- Activează modul privat (incognito).
-
-       * Istoricul, formularele, căutările și fișierele temporare NU sunt salvate după sesiune.
-       * ❗ Dar acest mod NU te face anonim pe internet – doar curăță urmele locale de pe calculator.
-
-
-🧭 Istoric de navigare
-- Șterge periodic istoricul de navigare pentru a proteja informațiile despre site-urile vizitate.
-Site-urile sau alte persoane pot folosi istoricul pentru a crea profiluri despre preferințele tale.
-
-🚫 Blocarea pop-up-urilor
-- Activează Pop-up Blocker.
-Ferestrele pop-up pot conține malware sau redirecționări periculoase.
-
-
-🧹 Ștergerea cache-ului
-- Browserul salvează pagini și fișiere în cache pentru a accelera încărcarea.
-
-- Dacă nu este curățat:
-     * ocupă spațiu
-     * încetinește browserul
-     * păstrează informații sensibile
-
-- Ștergerea periodică a cache-ului îmbunătățește performanța și protejează confidențialitatea.
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Ce reguli trebuie respectate la descărcarea fișierelor de pe Internet?",
-        back: "Descarcă doar de pe site-uri de încredere, verifică autenticitatea site-ului și alege salvarea fișierului pe disc pentru scanare."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "De ce este importantă ștergerea periodică a cache-ului?",
-        back: "Pentru a elibera spațiu, îmbunătăți performanța browserului și proteja informațiile sensibile salvate local."
-      }
-    ]
-  }],
-        qa:[ {
-    question: "Ce face modul de navigare privată (incognito)?",
-    answer: "Șterge istoricul, formularele și fișierele temporare după sesiune, dar nu oferă anonimitate completă online."
-  },
-  {
-    question: "Cum te protejează blocarea ferestrelor pop-up?",
-    answer: "Previne afișarea automată a ferestrelor care pot conține malware sau redirecționări periculoase."
-  }]
+        content:``,
+        flashcards:[],
+        qa:[]
       }
     ]
     }
   ],
          quiz:[
-      {
-  "title": "Quiz 1",
-  "totalPoints": 100,
-  "questions": [
-    {
-      "question": "Care dintre următoarele nu este adevărat despre Internet?",
-      "options": [
-        "Nu este controlat de o singură organizație sau entitate guvernamentală.",
-        "Este o rețea locală de calculatoare și rețele.",
-        "Industriile, guvernele, școlile și indivizii cooperează în autoguvernarea Internetului.",
-        "Este compus din rețele la care sunt conectate dispozitive."
-      ],
-      "correctAns": "Este o rețea locală de calculatoare și rețele.",
-      "points": 20
-    },
-    {
-      "question": "Care este formatul folosit pentru a scrie pagini web?",
-      "options": [
-        "Hypertext Transport Protocol (HTTP)",
-        "Hypertext Markup Language (HTML)",
-        "Transmission Control Protocol/Internet Protocol (TCP/IP)",
-        "Microsoft Adobe Printer (MAP)"
-      ],
-      "correctAns": "Hypertext Markup Language (HTML)",
-      "points": 20
-    },
-    {
-      "question": "Care dintre următoarele este un sistem de e-mail mai recent și avansat?",
-      "options": [
-        "Simple Mail Transfer Protocol (SMTP)",
-        "Transmission Control Protocol (TCP)",
-        "Post Office Protocol (POP)",
-        "Internet Mail Access Protocol (IMAP)"
-      ],
-      "correctAns": "Internet Mail Access Protocol (IMAP)",
-      "points": 20
-    },
-    {
-      "question": "Care este cel mai popular cod de scripting folosit în paginile web?",
-      "options": [
-        "Java",
-        "JavaScript",
-        "Hypertext Markup Language (HTML)",
-        "Hypertext Transport Protocol (HTTP)"
-      ],
-      "correctAns": "JavaScript",
-      "points": 20
-    },
-    {
-      "question": "Care dintre următoarele nu este o extensie care adaugă funcționalitate de navigare dinamică?",
-      "options": [
-        "Java",
-        "extensie",
-        "add-ons",
-        "plug-ins"
-      ],
-      "correctAns": "Java",
-      "points": 20
-    }
-  ]
-},
-{
-  "title": "Quiz 2",
-  "totalPoints": 100,
-  "questions": [
-    {
-      "question": "Un cookie care nu a fost creat de site-ul web care încearcă să îl acceseze se numește un __________.",
-      "options": [
-        "cookie de primă parte",
-        "cookie de a doua parte",
-        "cookie de terță parte",
-        "cookie de resursă"
-      ],
-      "correctAns": "cookie de terță parte",
-      "points": 20
-    },
-    {
-      "question": "Care dintre următoarele extensii de browser oferă legături către programe externe?",
-      "options": [
-        "Java applet",
-        "plug-in",
-        "extensie",
-        "add-on"
-      ],
-      "correctAns": "plug-in",
-      "points": 20
-    },
-    {
-      "question": "Cum folosește un atacator o tehnică de tip malvertising?",
-      "options": [
-        "Atacatorii infectează direct site-ul web identificând o vulnerabilitate în server.",
-        "Java applet-urile sunt atașate la mesaje spam care pretind a fi reclame.",
-        "Atacatorii pot infecta rețelele de publicitate terță parte, distribuind malware prin anunțuri afișate în browser.",
-        "Obiectele de resurse sunt trimise ca atașamente email de la o sursă care pare a fi o agenție de publicitate cunoscută."
-      ],
-      "correctAns": "Atacatorii pot infecta rețelele de publicitate terță parte, distribuind malware prin anunțuri afișate în browser.",
-      "points": 20
-    },
-    {
-      "question": "O __________ este o listă de adrese de e-mail de la expeditori de la care NU dorești să primești mesaje.",
-      "options": [
-        "listă albă",
-        "listă neagră",
-        "listă verde",
-        "listă roșie"
-      ],
-      "correctAns": "listă neagră",
-      "points": 20
-    },
-    {
-      "question": "Care dintre următoarele este adevărat despre un cookie?",
-      "options": [
-        "Poate conține un virus.",
-        "Poate reprezenta un risc de securitate și confidențialitate.",
-        "Acționează ca un vierme informatic.",
-        "Plasează un fișier mic pe serverul web trimis din browser."
-      ],
-      "correctAns": "Poate reprezenta un risc de securitate și confidențialitate.",
-      "points": 20
-    }
-  ]
-},
-{
-  "title": "Quiz 3",
-  "totalPoints": 100,
-  "questions": [
-    {
-      "question": "Computerul lui Bob a fost infectat printr-un atac de tip drive-by download. Ce a făcut Bob pentru a se infecta?",
-      "options": [
-        "A deschis un atașament de e-mail.",
-        "A vizitat un site web.",
-        "A trimis din greșeală un virus către un site web.",
-        "A dat clic pe Download."
-      ],
-      "correctAns": "A vizitat un site web.",
-      "points": 20
-    },
-    {
-      "question": "Ce tip de cookie este cel mai complex?",
-      "options": [
-        "obiect partajat local (LSO)",
-        "cookie de tip plug-in",
-        "cookie de control (CC)",
-        "cookie extins (CE)"
-      ],
-      "correctAns": "obiect partajat local (LSO)",
-      "points": 20
-    },
-    {
-      "question": "Ce tehnică folosesc atacatorii pentru a ocoli filtrele antispam bazate pe text?",
-      "options": [
-        "spam cu obiecte",
-        "spam cu atașamente",
-        "spam Flash",
-        "spam cu imagini"
-      ],
-      "correctAns": "spam cu imagini",
-      "points": 20
-    },
-    {
-      "question": "Care este primul pas în apărarea împotriva atacurilor bazate pe Internet?",
-      "options": [
-        "Utilizarea unui browser care suportă descărcări automate.",
-        "Asigurarea securității computerului propriu.",
-        "Să nu deschizi atașamente de e-mail.",
-        "Adăugarea de extensii de securitate la browser."
-      ],
-      "correctAns": "Asigurarea securității computerului propriu.",
-      "points": 20
-    },
-    {
-      "question": "De ce nu ar trebui să dai clic pe un hyperlink integrat?",
-      "options": [
-        "Sunt lente.",
-        "Rareori funcționează corect.",
-        "Te pot duce către un alt site decât cel anunțat.",
-        "Ocupă prea mult spațiu pe disc."
-      ],
-      "correctAns": "Te pot duce către un alt site decât cel anunțat.",
-      "points": 20
-    }
-  ]
-},
-{
-  "title": "Quiz 4",
-  "totalPoints": 100,
-  "questions": [
-    {
-      "question": "Panoul de citire permite utilizatorului să citească un mesaj email __________.",
-      "options": [
-        "după ce atașamentul a fost salvat pe hard disk",
-        "o singură dată",
-        "fără a-l deschide efectiv",
-        "dintr-o locație la distanță"
-      ],
-      "correctAns": "fără a-l deschide efectiv",
-      "points": 20
-    },
-    {
-      "question": "Cea mai sigură opțiune când configurezi un browser pentru securitate este __________.",
-      "options": [
-        "acceptarea cookie-urilor de primă parte",
-        "acceptarea cookie-urilor de primă parte, dar respingerea celor de terță parte",
-        "respingerea obiectelor partajate local, dar acceptarea cookie-urilor de a doua parte",
-        "respingerea cookie-urilor de primă și terță parte"
-      ],
-      "correctAns": "respingerea cookie-urilor de primă și terță parte",
-      "points": 20
-    },
-    {
-      "question": "Care dintre următoarele nu este o extensie de browser pentru îmbunătățirea securității?",
-      "options": [
-        "reputația site-ului",
-        "semnal flash pentru rețeaua locală",
-        "extensie de tip URL expander",
-        "validarea plug-inurilor"
-      ],
-      "correctAns": "semnal flash pentru rețeaua locală",
-      "points": 20
-    },
-    {
-      "question": "De ce ai dori să blochezi conținutul extern să nu se descarce în clientul tău de email?",
-      "options": [
-        "Pentru a împiedica spammerii să afle că adresa ta de email este validă",
-        "Pentru a profita de citirea de la distanță",
-        "Pentru a încetini clientul de email astfel încât să poți citi mesajul",
-        "Pentru a preveni umplerea bufferului procesorului grafic al computerului"
-      ],
-      "correctAns": "Pentru a împiedica spammerii să afle că adresa ta de email este validă",
-      "points": 20
-    },
-    {
-      "question": "Care dintre următoarele NU este o practică sigură pe Internet?",
-      "options": [
-        "Restricționează cookie-urile în browser din setările acestuia.",
-        "Verifică ortografia adresei web înainte de a o trimite.",
-        "Nu da clic pe hyperlinkuri integrate în emailuri.",
-        "Rulează cod JavaScript pentru a preveni atacurile."
-      ],
-      "correctAns": "Rulează cod JavaScript pentru a preveni atacurile.",
-      "points": 20
-    }
-  ]
-}
-
-
-
-
+      
  
 ]
   },
@@ -4980,881 +4222,115 @@ Ferestrele pop-up pot conține malware sau redirecționări periculoase.
     title:"Securitatea mobilă",
     description:"Acest curs oferă o introducere practică în securitatea mobilă.",
     banner_image:"/cap5.jpg",
-    achievementBadge: "Securitate mobilă",
+    achievementBadge: "secure-intermediate",
     summary:` rezumat curs 5 `,
     chapters:[{
-      title:"🔒 Atacuri asupra dispozitivelor mobile și rețelelor wireless",
+      title:" capitol 1 ",
       subsections:[
       {
-        name:"Introducere",
-        content:`Dispozitivele mobile și rețelele wireless sunt peste tot în jurul nostru – de aceea li se spune „ubiquitous” (mereu prezente). Datorită smartphone-urilor, tabletelor și laptopurilor, nu mai avem nevoie de un computer fix conectat prin cablu pentru a naviga pe internet sau a accesa date.
-Rețelele wireless au schimbat modul în care călătorim, muncim și comunicăm:
-- În aeroporturi, trenuri sau hoteluri, ne putem conecta oricând la internet.
-
-- La muncă, folosim internetul wireless în ședințe sau conferințe, ceea ce crește productivitatea.
-
-- Studenții, clienții din cafenele sau fanii din stadioane se așteaptă să aibă Wi-Fi gratuit.
-
-📊 Statistici:
-- Utilizatorii petrec peste jumătate din timpul pe internet folosind un dispozitiv mobil.
-
-- 4 din 5 căutări web încep acum pe mobil.
-
-- A apărut chiar și un cuvânt nou în dicționare: nomofobie – frica de a rămâne fără telefonul mobil.
-
-
-🛡️ Dar unde e conectivitate, apar și riscuri:
-- Atacatorii vizează tot mai des dispozitivele mobile și rețelele wireless.
-
-- Semnalul wireless poate fi interceptat, iar datele sensibile (parole, carduri etc.) pot fi furate.
-
-Este important să înțelegi cum funcționează atacurile, ca să știi cum să te protejezi. Există două mari direcții:
-- Atacuri asupra rețelelor wireless – Wi-Fi și Bluetooth
-
-- Atacuri asupra dispozitivelor mobile care folosesc aceste rețele
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "De ce sunt considerate rețelele wireless și dispozitivele mobile „ubiquitous”?",
-        back: "Pentru că sunt mereu prezente în viața noastră, permițând acces la internet oriunde, fără cabluri și fără un computer fix."
-      }
-    ]
-  }],
-        qa:[ {
-    question: "Ce riscuri implică utilizarea rețelelor wireless și a dispozitivelor mobile?",
-    answer: "Semnalul wireless poate fi interceptat, iar atacatorii pot fura date sensibile sau compromite dispozitivele mobile."
-  }]
+        name:"",
+        content:``,
+        flashcards:[],
+        qa:[]
       },
       {
-        name:"🌐 Ce este Wi-Fi-ul?",
-        content:`
-    Wi-Fi-ul este o tehnologie care oferă conexiune rapidă la internet prin unde radio. Este cunoscut și ca WLAN (Wireless Local Area Network). Se folosește pe o rază de aproximativ 140 metri și oferă viteze de până la 7 Gbps, în funcție de standard.
-
-    Spre deosebire de rețelele mobile (3G, 4G, LTE), Wi-Fi-ul:
-- Este instalat și gestionat de utilizatori (acasă, la birou etc.)
-
-- Este mai rapid, dar cu acoperire mai mică
-
-👨‍🔬 Standardele Wi-Fi sunt stabilite de IEEE (Institutul Inginerilor Electrotehniști și Electroniști). Exemple:
-- 802.11n – Viteză: până la 600 Mbps
-
-- 802.11ac – Viteză: până la 7.2 Gbps
-
-🧰 Echipamente pentru o rețea Wi-Fi
-- Dispozitivul tău (laptop, tabletă, telefon) are nevoie de:
-     * Placă de rețea wireless (internă)
-     * Software care detectează automat rețelele disponibile
-
-- Routerul wireless (sau WLAN gateway):
-     * Este poarta de intrare în rețea
-     * Trimite și primește semnal către/de la dispozitive
-     * Se conectează la internet printr-un modem
-
-- Rețea de acasă:
-     * Laptopul sau tableta se conectează la router prin semnal radio
-     * Toate dispozitivele (cu fir sau fără fir) împart aceeași conexiune la internet
-
-🏢 Rețele Wi-Fi în companii sau școli
-
-În loc de un singur router, se folosesc:
-- Access Point-uri (AP) – puncte de acces multiple care creează „celule” de acoperire
-
-- Când utilizatorul se deplasează, semnalul este preluat de cel mai apropiat AP (se face un handoff automat)
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Care este diferența dintre Wi-Fi și rețelele mobile (3G, 4G, LTE)?",
-        back: "Wi-Fi-ul este instalat de utilizatori, are acoperire mai mică, dar oferă viteză mai mare decât rețelele mobile."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Ce rol au Access Point-urile (AP) în rețelele Wi-Fi mari?",
-        back: "Extind acoperirea semnalului și permit trecerea automată a utilizatorului între zone (handoff)."
-      }
-    ]
-  }],
-        qa:[ {
-    question: "Ce este un router wireless și ce funcții îndeplinește?",
-    answer: "Este poarta de acces la rețea, conectează dispozitivele între ele și cu internetul, printr-un modem."
-  },
-  {
-    question: "Care sunt două standarde Wi-Fi și vitezele lor maxime?",
-    answer: "802.11n (până la 600 Mbps) și 802.11ac (până la 7.2 Gbps)."
-  }]
+        name:"",
+        content:``,
+        flashcards:[],
+        qa:[]
       },
-      {
-        name:"🔓 Atacuri asupra rețelelor Wi-Fi",
-        content:`
-    Utilizatorii casnici se pot confrunta cu mai multe riscuri dacă rețeaua lor Wi-Fi nu este securizată:
-- Citirea transmisiilor wireless
-     * Atacatorii pot vedea informații precum parole, nume de utilizator sau date de card transmise prin rețea.
-
-- Vizualizarea sau furtul datelor
-     * Dacă ai partajare de fișiere activată, un atacator poate accesa folderele de pe orice dispozitiv conectat la rețea.
-
-- Injectarea de malware
-     * Hackerii pot pătrunde în rețea și instala viruși, troieni sau alte programe dăunătoare.
-
-- Descărcarea de conținut ilegal
-     * Atacatorii pot folosi rețeaua ta pentru a descărca materiale ilegale. Dacă autoritățile identifică IP-ul tău, tu poți fi tras la răspundere.
-
-
-📍 Atac frecvent: War driving
- Atacatorii caută rețele Wi-Fi nesecurizate conducând sau mergând pe jos, folosind un laptop sau alt dispozitiv portabil pentru a le detecta și exploata.
-
-☕ Rețele Wi-Fi publice (ex: cafenele, aeroporturi, campusuri)
-
-Riscuri suplimentare:
-- Aceste rețele sunt rareori securizate și accesibile oricui.
-
-- Un atacator poate crea un dispozitiv numit evil twin (geamăn rău), care imită rețeaua originală. Dispozitivul tău se poate conecta fără să îți dai seama, iar atacatorul poate intercepta datele sau trimite malware.
-
-📌 Probleme comune:
-- Semnalul Wi-Fi trece de pereți și poate fi interceptat de la distanță.
-
-- Mulți utilizatori nu știu să-și securizeze routerul.
-
-- Unii nici nu sunt conștienți de riscuri.
-
-
-📡 Atacuri prin Bluetooth
-
-Bluetooth permite conectarea rapidă între două dispozitive pe o rază de ~10 metri. Exemple:
-- Căști wireless, mouse sau tastatură, camere foto, controlere de jocuri, tensiometre etc.
-
-🧠 Notă:
-- Versiunea actuală: Bluetooth 4.2
-
-- Compatibil înapoi cu versiunile anterioare
-
-- Viteza de transfer e mică: 1 Mbps
-
-
-🧪 Aplicații neobișnuite:
-- Mingea de baschet care transmite date despre mișcare
-
-- Undița care trimite alertă când mușcă peștele
-
-
-🚨 Tipuri de atacuri Bluetooth
-1. Bluejacking
- Trimiterea de mesaje nesolicitate către dispozitive Bluetooth din apropiere. De obicei, sunt doar texte, dar pot fi și imagini sau sunete. Este deranjant, dar nu fură date.
-
-2. Bluesnarfing
- Atacatorul accesează date fără permisiune de pe telefonul sau laptopul tău: contacte, mesaje, poze, fișiere etc. Este un atac grav, deoarece datele sunt furate.
-
-`,
-        flashcards:[ {
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Ce riscuri apar dacă rețeaua Wi-Fi de acasă nu este securizată?",
-        back: "Atacatorii pot intercepta date, fura fișiere, instala malware sau descărca conținut ilegal folosind conexiunea ta."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Ce este un atac de tip 'evil twin' în rețelele Wi-Fi publice?",
-        back: "Este o rețea falsă creată de un atacator care imită o rețea legitimă, interceptând datele utilizatorilor care se conectează."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 3",
-    cards: [
-      {
-        front: "Care este diferența dintre Bluejacking și Bluesnarfing?",
-        back: "Bluejacking trimite mesaje nesolicitate, în timp ce Bluesnarfing fură date personale fără permisiune."
-      }
-    ]
-  }],
-        qa:[ {
-    question: "Ce este war driving?",
-    answer: "Căutarea de rețele Wi-Fi nesecurizate folosind un laptop sau alt dispozitiv, de obicei dintr-o mașină sau pe jos."
-  },
-  {
-    question: "De ce sunt rețelele Wi-Fi publice riscante?",
-    answer: "Sunt rareori securizate și pot fi imitate de atacatori care creează rețele false pentru a intercepta date."
-  },
-  {
-    question: "Ce date pot fi furate prin Bluesnarfing?",
-    answer: "Contacte, mesaje, poze și fișiere de pe telefon sau laptop."
-  }]
-      },
-      {
-        name:"📱 Atacuri asupra dispozitivelor mobile",
-        content:`Atacurile nu vizează doar rețelele wireless, ci și dispozitivele mobile în sine. Pentru fiecare tip de dispozitiv, există riscuri de securitate asociate.
-
-🔍 Tipuri de dispozitive mobile
-
-1. Calculatoare portabile (Portable Computers)
-- Sunt asemănătoare cu desktopurile tradiționale, dar mai mici și alimentate cu baterie.
-
-- Rulează sisteme de operare ca Windows, macOS sau Linux.
-
-- Exemple: laptopuri, subnotebook-uri (ultrabook, MacBook Air).
-
-📌 Risc: Fiind similare cu desktopurile, sunt vulnerabile la aceleași tipuri de atacuri (viruși, troieni, furt de date) și pot fi ușor furate sau pierdute.
-
-
-2. Calculatoare web-based
-- Exemple: Chromebook-uri.
-
-- Rulează o versiune limitată de Linux și folosesc aplicații web.
-
-- Nu stochează fișiere local, ci în cloud.
-
-- Nu se pot instala aplicații tradiționale.
-
-📌 Risc: Necesită conexiune constantă la internet și depind de securitatea aplicațiilor web folosite.
-
-
-3. Tablete
-- Mai mari decât telefoanele, mai mici decât laptopurile.
-
-- Se bazează pe ecran tactil, fără tastatură fizică.
-
-- Dimensiuni tipice: 5–10 inch (12.7–25.4 cm).
-
-- Greutate: sub 1.5 pounds (0.68 kg).
-
-- Sisteme de operare populare: iOS, Android, Windows Mobile.
-
-📌 Risc: De obicei mai ușor de folosit, dar cu funcționalitate limitată și protecție slabă împotriva aplicațiilor rău intenționate.
-
-
-4. Smartphone-uri
-- Asemănătoare cu telefoanele clasice, dar cu sistem de operare complet.
-
-- Pot rula aplicații pentru muncă, social media, muzică etc.
-
-- Sunt practic mini-computere.
-
-- 2 din 3 telefoane vândute azi sunt smartphone-uri.
-
-📌 Risc: Prin conectivitate mare și aplicații multiple, sunt ținte frecvente pentru atacuri prin aplicații, mesaje, rețele sau vulnerabilități hardware.
-
-
-5. Tehnologie purtabilă (Wearable Technology)
-- Dispozitive care se poartă pe corp, nu se țin în mână.
-
-- Exemple: brățări de fitness, smartwatch-uri, dispozitive cu comandă vocală.
-
-a. Fitness Tracker
-  - Măsoară pași, distanță, ritm cardiac, somn, locație, alerte SMS/email.
-
-b. Smartwatch
-  - Afișează notificări fără a scoate telefonul.
-  - Poate controla alte dispozitive (ex: automatizări în casă).
-
-c. Wearable computer
-  - Dispozitive cu afișaj montat pe cap (ex: Google Glass).
-  - Pot răspunde la comenzi vocale și executa acțiuni precum fotografierea sau căutarea pe internet.
-
-📌 Risc: Deși utile și discrete, aceste dispozitive pot colecta date sensibile constant și pot fi mai greu de securizat din cauza dimensiunii și conectivității.
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Care sunt principalele riscuri pentru laptopuri și Chromebook-uri?",
-        back: "Laptopurile pot fi infectate cu malware sau furate, iar Chromebook-urile depind de securitatea aplicațiilor web și de conexiunea constantă la internet."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Ce riscuri aduce tehnologia purtabilă (wearables)?",
-        back: "Poate colecta constant date sensibile și este dificil de securizat din cauza dimensiunii și conectivității ridicate."
-      }
-    ]
-  }],
-        qa:[ {
-    question: "De ce sunt smartphone-urile ținte frecvente pentru atacuri?",
-    answer: "Pentru că sunt conectate constant la internet, rulează aplicații diverse și au multiple puncte vulnerabile (mesaje, rețele, hardware)."
-  },
-  {
-    question: "Ce caracteristică comună le face vulnerabile pe toate dispozitivele mobile?",
-    answer: "Portabilitatea și conectivitatea continuă le expun la pierdere, furt sau atacuri cibernetice prin rețea sau aplicații."
-  }]
-      },
-      {
-        name:"⚠️ Riscuri asociate dispozitivelor mobile",
-        content:`Utilizarea dispozitivelor mobile vine cu mai multe riscuri de securitate:
-1. Instalarea aplicațiilor nesigure
-- Dispozitivele mobile permit instalarea rapidă de aplicații din surse variate, inclusiv de la dezvoltatori necunoscuți.
-
-- Unele aplicații gratuite pot conține cod malițios, deoarece nu sunt verificate pentru securitate.
-
-Apple iOS
-- Sistem închis, aplicațiile trebuie aprobate de Apple înainte de a fi publicate.
-
-- Aplicațiile sunt distribuite prin App Store, parte a ecosistemului Apple.
-
-- Protecție mai mare, dar unele aplicații trimit totuși date către rețele externe.
-
-Google Android
-- Sistem deschis, oricine poate crea și modifica aplicații.
-
-- Aplicațiile pot fi descărcate din Google Play (care nu verifică la fel de strict ca Apple) sau din surse externe (numit sideloading).
-
-- Mai multe aplicații Android sunt riscante:
-     * 44% imită aplicații legitime și păcălesc utilizatorii să plătească servicii scumpe.
-     * 24% fură date.
-     * 17% încarcă reclame (adware).
-
-
-2. Securitate fizică limitată
-- Portabilitatea este și o vulnerabilitate.
-
-- Dispozitivele mobile pot fi ușor pierdute sau furate în locuri publice (școli, cafenele etc.).
-
-- Informațiile sensibile pot fi accesate dacă nu sunt protejate corespunzător.
-
-- Pericol: persoane străine pot urmări ecranul sau parola introdusă.
-
-
-3. Conectarea la rețele publice
-- Rețelele Wi-Fi publice sunt nesigure.
-
-- Atacatorii pot intercepta datele transmise și pot citi informații confidențiale dacă nu se folosește criptare.
-
-4. Urmărirea locației (Location Tracking)
-- Dispozitivele mobile folosesc GPS și servicii de localizare pentru navigare, aplicații sociale, vreme etc.
-
-- Aplicațiile pot arăta locația unui prieten sau pot oferi cupoane în apropierea unui magazin.
-
-- Riscuri:
-    * Atacatorii pot identifica locația exactă a utilizatorului și îl pot urmări.
-    * Se pot crea liste cu locurile frecventate pentru a planifica atacuri fizice sau furturi.
-    
-5. Accesarea conținutului nesigur
-- Dispozitivele mobile pot scana coduri QR care pot conține:
-    * Linkuri către site-uri periculoase
-    * Coduri malițioase care instalează programe dăunătoare
-
-👁 Exemplu: Un atacator creează o reclamă cu un link aparent legitim (ex: bancă), dar codul QR direcționează către un site fals sau cu malware.
-📊 Statistici relevante:
-- 3 din 5 utilizatori între 18–34 ani accesează lunar conturi bancare sau financiare de pe telefon.
-
-- Peste jumătate dintre adulții din SUA folosesc banking mobil.
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Ce diferențe de securitate există între Apple iOS și Google Android?",
-        back: "iOS este un sistem închis, cu aplicații aprobate de Apple; Android permite sideloading și are mai multe aplicații riscante din surse externe."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Ce riscuri implică funcția de urmărire a locației pe dispozitive mobile?",
-        back: "Atacatorii pot identifica locația exactă, crea profiluri de mișcare și planifica atacuri fizice sau furturi."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 3",
-    cards: [
-      {
-        front: "Cum pot codurile QR fi folosite în atacuri cibernetice?",
-        back: "Pot conține linkuri către site-uri false sau malware care se instalează automat pe dispozitiv."
-      }
-    ]
-  }],
-        qa:[ {
-    question: "De ce este periculoasă instalarea de aplicații din surse externe pe Android?",
-    answer: "Pentru că pot conține cod malițios, fura date sau impune plăți ascunse."
-  },
-  {
-    question: "Cum poate fi compromisă securitatea fizică a unui telefon?",
-    answer: "Prin pierdere, furt sau urmărirea activă a ecranului/parolei în locuri publice."
-  },
-  {
-    question: "Ce risc apare la conectarea la rețele Wi-Fi publice?",
-    answer: "Atacatorii pot intercepta datele necriptate și fura informații confidențiale."
-  }]
-      }
     ]
     },
     {
-      title:"🛡️ Apărarea împotriva atacurilor mobile",
-      subsections:[
-        {
-        name:"Introducere",
-        content:`
-  Există două categorii principale de apărare:
-- 🔐 Securizarea rețelelor wireless
-
-- 🧰 Protecția dispozitivelor mobile
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Care sunt cele două categorii principale de apărare în mediul mobil?",
-        back: "Securizarea rețelelor wireless și protecția dispozitivelor mobile."
-      }
-    ]
-  }],
-        qa:[ {
-    question: "Ce direcții esențiale trebuie urmate pentru a te proteja în mediul mobil?",
-    answer: "Securizarea rețelelor wireless și protecția dispozitivelor mobile."
-  }]
+      title:" capitol 2 ",
+      subsections:[{
+        name:"",
+        content:``,
+        flashcards:[],
+        qa:[]
       },
       {
-        name:" 🔐 Securizarea rețelei wireless",
-        content:`✅ 1. Securizarea routerului Wi-Fi de acasă
-- Schimbă parola implicită de configurare cu una puternică.
-
-- Adresa IP a routerului (ex: 192.168.1.1) permite accesul la setări printr-un browser.
-
-- Dezactivează opțiunea de „remote management” dacă nu este necesară.
-
-
-🔑 2. Activează WPA2 Personal
-- WPA2 criptează datele și previne accesul neautorizat.
-
-- Folosește o parolă de rețea (PSK) puternică (8–63 caractere).
-
-- Odată setată, dispozitivele vor memora parola și nu o vor mai cere.
-
-📌 WPS (Wi-Fi Protected Setup) e o metodă alternativă de conectare:
-- Metoda cu PIN (mai puțin sigură, recomandat să fie dezactivată)
-
-- Metoda cu buton (poate fi folosită temporar pentru adăugarea unui dispozitiv nou)
-
-
-🔒 3. Alte setări de securitate
-- Schimbă numele rețelei (SSID) pentru a nu dezvălui informații (ex: NU „SULLIVAN_HOUSE”).
-
-- Activează rețea pentru oaspeți (guest access), izolată de rețeaua principală.
-
-
-☕ Utilizarea în siguranță a rețelelor Wi-Fi publice
-Rețelele din cafenele, biblioteci, aeroporturi pot fi riscante. Urmează aceste bune practici:
-- 🧿 Watch for an evil twin
-    * Atacatorul poate crea o rețea falsă cu un nume similar (ex: „Free Airport Wireless”).
-    * Te conectezi din greșeală, iar atacatorul poate injecta malware sau fura datele.
-
-- ⛔ Evită activitățile sensibile
-    * Nu accesa conturi bancare sau nu trimite date personale pe Wi-Fi public.
-
-- 🛡️ Folosește un VPN
-    * Criptează datele transmise și protejează conexiunea.
-    * VPN-ul creează un „tunel” securizat chiar și în rețelele nesigure.
-
-
-📳 Configurarea în siguranță a Bluetooth-ului
-- Dezactivează Bluetooth când nu este utilizat.
-
-- Evită activarea în locuri publice cu persoane necunoscute.
-
-- Setează dispozitivul ca nedetectabil (undiscoverable) pentru a preveni atacuri precum bluesnarfing.
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Ce măsuri trebuie luate pentru a securiza routerul Wi-Fi de acasă?",
-        back: "Schimbarea parolei implicite, activarea WPA2, dezactivarea remote management, crearea unei rețele pentru oaspeți și schimbarea SSID-ului."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Cum te poți proteja când folosești o rețea Wi-Fi publică?",
-        back: "Evită activitățile sensibile, ferește-te de rețele false (evil twin) și folosește un VPN pentru criptarea conexiunii."
-      }
-    ]
-  }],
-        qa:[{
-    question: "Ce setare Bluetooth ajută la prevenirea atacurilor precum bluesnarfing?",
-    answer: "Setarea dispozitivului ca nedetectabil (undiscoverable) și dezactivarea Bluetooth-ului când nu este folosit."
-  },
-  {
-    question: "Ce este WPA2 și de ce trebuie activat pe router?",
-    answer: "WPA2 este un protocol de criptare care protejează datele transmise în rețea și previne accesul neautorizat."
-  }]
-      },
-     {
-        name:"🔐 Securitatea dispozitivului mobil",
-        content:`
-    Securizarea unui dispozitiv mobil presupune:
-- Configurarea inițială corectă
-
-- Urmarea bunelor practici
-
-- Gestiunea în caz de pierdere sau furt
-
-
-⚙️ Configurarea dispozitivului
-1. Dezactivarea funcțiilor nefolosite
-   - Multe funcții pot fi vectori de atac.
-   - Dezactivează Bluetooth dacă nu este folosit pentru a preveni bluejacking și bluesnarfing.
-
-2. Activarea ecranului de blocare
-   - Blochează automat ecranul după 30 sec – 30 min de inactivitate.
-   - Metode: PIN, parolă, model grafic, amprentă sau recunoaștere facială.
-
-📌 Nu confunda „lock screen” cu „sleep mode” (hibernare).
-
-🔁 Protecții în caz de încercări greșite
-   - Prelungirea timpului de blocare – dispozitivul rămâne blocat tot mai mult la fiecare cod greșit.
-   - Resetare la setările din fabrică – după un număr limită de încercări, toate datele pot fi șterse automat.
-
-
-🔐 Cea mai sigură metodă: parolă alfanumerică lungă.
-📉 Cea mai slabă metodă: PIN scurt de 4 cifre.
-   - 1234 este cel mai folosit (10.71%)
-   - 26.83% dintre coduri pot fi ghicite din primele 20 cele mai frecvente.
-
-📋 Bune practici de securitate
-- ❌ Nu face jailbreak/root (dezactivează protecțiile sistemului).
-
-- ❌ Nu instala aplicații din surse nesigure.
-
-- 🗑️ Șterge datele înainte de vânzare/donație.
-
-- 💾 Fă backup regulat.
-
-- 📵 Nu suna la numere din mesaje nesolicitate.
-
-- 🧠 Fii informat cu privire la amenințările actuale.
-
-
-📱 Pierdere sau furt de dispozitiv
-
-Pentru a reduce riscurile:
-- Ține telefonul ascuns în zone aglomerate.
-
-- Folosește ambele mâini pentru a-l ține.
-
-- Evită folosirea lângă scări rulante sau uși de metrou.
-
-- Cordoanele colorate atrag atenția – schimbă-le.
-
-- Dacă ești jefuit, nu opune rezistență. Notează detalii și anunță autoritățile.
-
-TABEL
-
-🔍 Funcții utile pentru dispozitive pierdute
-Funcție    Explicație
-Alarmă
-Dispozitivul poate emite sunete chiar și pe silențios.
-
-Ultima locație
-Locația finală poate fi salvată înainte ca bateria să moară.
-
-Localizare GPS
-Poți vedea poziția pe hartă.
-
-Blochează de la distanță
-Trimite un mesaj pe ecran și blochează dispozitivul.
-
-Fotografie cu hoțul
-Face poză cu camera frontală după mai multe coduri greșite și o trimite.
-
-
-📌 Dacă dispozitivul nu poate fi recuperat, activează ștergerea de la distanță (remote wipe) pentru a șterge complet datele și a preveni accesul neautorizat.
-`,
-        flashcards:[ {
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Ce măsuri ajută la protejarea unui dispozitiv mobil împotriva furtului sau pierderii?",
-        back: "Activarea ecranului de blocare, funcții de localizare și alarmă, blocare de la distanță, ștergere de la distanță și evitarea expunerii în public."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Care sunt bune practici de securitate pentru utilizarea zilnică a dispozitivelor mobile?",
-        back: "Nu face jailbreak/root, instalează aplicații doar din surse sigure, șterge datele înainte de vânzare, fă backup regulat și rămâi informat."
-      }
-    ]
-  }],
-        qa:[ {
-    question: "Ce metodă de blocare este considerată cea mai sigură?",
-    answer: "Parola alfanumerică lungă."
-  },
-  {
-    question: "Ce poți face dacă ți-ai pierdut telefonul?",
-    answer: "Activează localizarea, blochează-l de la distanță, trimite un mesaj pe ecran, pornește o alarmă sau activează ștergerea completă a datelor (remote wipe)."
-  }]
-      }
-    ]
+        name:"",
+        content:``,
+        flashcards:[],
+        qa:[]
+      },]
     },
   ],
        quiz:[
-  {
-  "title": "Quiz 1",
-  "totalPoints": 100,
-  "questions": [
+      
     {
-      "question": "Numele tehnic pentru o rețea Wi-Fi este:",
-      "options": [
-        "rețea wireless de arie personală (WPAN)",
-        "rețea wireless de arie locală (WLAN)",
-        "Bluetooth",
-        "rețea wireless ultraband (WU)"
+  title: "Quiz 1",
+  totalPoints: 100,
+  questions: [
+    {
+      question: "Fiecare dintre următoarele este un motiv pentru care este dificil să ne apărăm de atacatorii de astăzi, cu excepția:",
+      options: [
+        "detectarea rapidă a vulnerabilităților",
+        "complexitatea uneltelor de atac",
+        "confuzia utilizatorului",
+        "sofisticarea crescută a atacurilor"
       ],
-      "correctAns": "rețea wireless de arie locală (WLAN)",
-      "points": 20
+      correctAns: "detectarea rapidă a vulnerabilităților",
+      points: 100 / 6
     },
     {
-      "question": "Tabletele sunt proiectate pentru:",
-      "options": [
-        "capacități de procesare",
-        "ușurință în utilizare",
-        "viteză de conectare wireless",
-        "upgrade-uri hardware"
+      question: "În sens general, „securitatea” înseamnă:",
+      options: [
+        "disponibilă doar pe computere specializate",
+        "protejare împotriva acțiunilor directe",
+        "pașii necesari pentru a proteja o persoană sau o proprietate împotriva răului",
+        "ceva ce se poate atinge relativ ușor"
       ],
-      "correctAns": "ușurință în utilizare",
-      "points": 20
+      correctAns: "pașii necesari pentru a proteja o persoană sau o proprietate împotriva răului",
+      points: 100 / 6
     },
     {
-      "question": "Care dintre următoarele este fals despre un router wireless?",
-      "options": [
-        "Trimite și primește semnale wireless între toate dispozitivele wireless.",
-        "Este de obicei găsit într-o companie mare cu sute de utilizatori.",
-        "Este de obicei conectat la modemul utilizatorului.",
-        "Combină mai multe tehnologii de rețea."
+      question: "__________ asigură faptul că doar persoanele autorizate pot vedea informațiile.",
+      options: [
+        "Integritatea",
+        "Confidențialitatea",
+        "Disponibilitatea",
+        "Autorizarea"
       ],
-      "correctAns": "Este de obicei găsit într-o companie mare cu sute de utilizatori.",
-      "points": 20
+      correctAns: "Confidențialitatea",
+      points: 100 / 6
     },
     {
-      "question": "Când un utilizator se deplasează dintr-o zonă de acoperire într-alta într-o rețea Wi-Fi, acest lucru se numește:",
-      "options": [
-        "migrating",
-        "traveling",
-        "roaming",
-        "handshaking"
+      question: "De ce pot brokerii să ceară un preț atât de mare pentru ceea ce vând?",
+      options: [
+        "Sunt profesioniști licențiați",
+        "Țintele atacurilor sunt mereu corporații bogate",
+        "Vulnerabilitatea descoperită este necunoscută și e puțin probabil să fie corectată rapid",
+        "Lucrează în echipă și toți trebuie plătiți"
       ],
-      "correctAns": "roaming",
-      "points": 20
+      correctAns: "Vulnerabilitatea descoperită este necunoscută și e puțin probabil să fie corectată rapid",
+      points: 100 / 6
     },
     {
-      "question": "Care dintre următoarele NU este un risc în cazul folosirii unei rețele Wi-Fi neprotejate acasă?",
-      "options": [
-        "Un atacator poate fura date sensibile dintr-un calculator conectat la rețea.",
-        "Se poate injecta malware în calculatoarele conectate.",
-        "Un atacator poate prelua controlul tastaturii utilizatorului prin rețea.",
-        "Informația transmisă prin rețea poate fi captată și citită."
+      question: "Fiecare dintre următoarele este un strat succesiv în realizarea securității informației, cu excepția:",
+      options: [
+        "politici și proceduri",
+        "oameni",
+        "produse",
+        "scopuri"
       ],
-      "correctAns": "Un atacator poate prelua controlul tastaturii utilizatorului prin rețea.",
-      "points": 20
-    }
-  ]
-},
-{
-  "title": "Quiz 2",
-  "totalPoints": 100,
-  "questions": [
-    {
-      "question": "Care este un motiv pentru care dispozitivele Android sunt considerate mai nesigure decât cele iOS?",
-      "options": [
-        "Toate aplicațiile Android sunt gratuite.",
-        "iOS este disponibil de mai mult timp și are mai puține vulnerabilități.",
-        "Aplicațiile Android pot fi instalate din surse externe (sideloaded).",
-        "Aplicațiile Apple sunt scrise într-un limbaj binar mai sigur."
-      ],
-      "correctAns": "Aplicațiile Android pot fi instalate din surse externe (sideloaded).",
-      "points": 20
+      correctAns: "scopuri",
+      points: 100 / 6
     },
     {
-      "question": "__________ este un atac care trimite mesaje nesolicitate către dispozitive Bluetooth.",
-      "options": [
-        "Bluestealing",
-        "Bluejacking",
-        "Bluesending",
-        "Bluesnarfing"
+      question: "Ce este o persoană sau element care are capacitatea de a realiza o amenințare?",
+      options: [
+        "exploatator",
+        "agent al amenințării",
+        "element periculos",
+        "agent de risc"
       ],
-      "correctAns": "Bluejacking",
-      "points": 20
-    },
-    {
-      "question": "Care dintre următoarele dispozitive nu are un sistem de operare ce permite rularea aplicațiilor terțe?",
-      "options": [
-        "tabletă",
-        "telefon cu funcții de bază (feature phone)",
-        "smartphone",
-        "laptop"
-      ],
-      "correctAns": "telefon cu funcții de bază (feature phone)",
-      "points": 20
-    },
-    {
-      "question": "Ce împiedică un dispozitiv mobil să fie folosit până când utilizatorul introduce parola corectă?",
-      "options": [
-        "identificator de glisare (SW-ID)",
-        "tastatură",
-        "touchpad",
-        "ecran de blocare"
-      ],
-      "correctAns": "ecran de blocare",
-      "points": 20
-    },
-    {
-      "question": "Alice a introdus de mai multe ori greșit parola pe telefon și acum este nevoită să introducă o frază specială. Asta înseamnă că dispozitivul ei este configurat să:",
-      "options": [
-        "folosească coduri PIN ca parolă",
-        "reseteze dispozitivul la setările din fabrică",
-        "extindă perioada de blocare",
-        "dubleze timpul de așteptare înainte de o nouă încercare"
-      ],
-      "correctAns": "extindă perioada de blocare",
-      "points": 20
-    }
-  ]
-},
-
-{
-  "title": "Quiz 3",
-  "totalPoints": 100,
-  "questions": [
-    {
-      "question": "__________ este procesul de ocolire a limitărilor și protecțiilor încorporate ale unui dispozitiv mobil.",
-      "options": [
-        "Cracking",
-        "Twisting",
-        "Jailbreaking",
-        "Slicing"
-      ],
-      "correctAns": "Jailbreaking",
-      "points": 20
-    },
-    {
-      "question": "De ce nu este recomandat să instalezi aplicații dintr-un magazin neoficial?",
-      "options": [
-        "Aplicațiile sunt mereu inferioare în magazinele neoficiale.",
-        "Descărcarea aplicației durează mai mult decât dintr-un magazin aprobat.",
-        "Se privează dezvoltatorii de venituri.",
-        "Aplicațiile nu sunt verificate și pot conține malware."
-      ],
-      "correctAns": "Aplicațiile nu sunt verificate și pot conține malware.",
-      "points": 20
-    },
-    {
-      "question": "Care este primul pas în securizarea unui router wireless Wi-Fi?",
-      "options": [
-        "crearea unei parole pentru protejarea setărilor interne",
-        "dezactivarea tuturor conexiunilor wireless",
-        "activarea pachetelor cu preambul scurt",
-        "monitorizarea semnalului Wi-Fi cu un telemonitor la distanță"
-      ],
-      "correctAns": "crearea unei parole pentru protejarea setărilor interne",
-      "points": 20
-    },
-    {
-      "question": "Ce oferă cel mai bun nivel de securitate wireless pentru o rețea Wi-Fi de acasă?",
-      "options": [
-        "plasarea routerului într-o cutie",
-        "folosirea unui identificator bun",
-        "activarea Wi-Fi Protected Setup (WPS)",
-        "activarea Wi-Fi Protected Access 2 (WPA2) Personal"
-      ],
-      "correctAns": "activarea Wi-Fi Protected Access 2 (WPA2) Personal",
-      "points": 20
-    },
-    {
-      "question": "Scopul principal al unui __________ este să capteze transmisiile de la utilizatorii legitimi.",
-      "options": [
-        "punct de acces fals (rogue access point)",
-        "Wireless Equivalent Privacy (WEP)",
-        "evil twin",
-        "Bluetooth grabber"
-      ],
-      "correctAns": "evil twin",
-      "points": 20
-    }
-  ]
-},
-{
-  "title": "Quiz 4",
-  "totalPoints": 100,
-  "questions": [
-    {
-      "question": "Care dintre următoarele poate adăuga un nivel suplimentar de securitate unei rețele Wi-Fi?",
-      "options": [
-        "dezactivarea difuzării SSID-ului",
-        "restricționarea utilizatorilor după adresa MAC",
-        "limitarea numărului de utilizatori",
-        "activarea accesului pentru oaspeți"
-      ],
-      "correctAns": "restricționarea utilizatorilor după adresa MAC",
-      "points": 20
-    },
-    {
-      "question": "Fiecare dintre următoarele este o practică de securitate recomandată când folosești o rețea Wi-Fi publică, cu excepția:",
-      "options": [
-        "atenție la rețele de tip 'evil twin'",
-        "utilizarea rețelei mai puțin de o oră pe zi",
-        "folosirea unei rețele private virtuale (VPN)",
-        "evitarea introducerii de informații confidențiale"
-      ],
-      "correctAns": "utilizarea rețelei mai puțin de o oră pe zi",
-      "points": 20
-    },
-    {
-      "question": "Care dintre următoarele nu este o măsură pentru a reduce riscul furtului sau pierderii unui dispozitiv mobil?",
-      "options": [
-        "înregistrarea adresei MAC înainte de utilizare",
-        "ținerea dispozitivului ascuns în zone riscante",
-        "folosirea ambelor mâini pentru a ține dispozitivul",
-        "evitarea utilizării dispozitivului pe scări rulante sau lângă ușile trenului"
-      ],
-      "correctAns": "înregistrarea adresei MAC înainte de utilizare",
-      "points": 20
-    },
-    {
-      "question": "__________ protejează un dispozitiv mobil atunci când nu a fost utilizat o anumită perioadă de timp.",
-      "options": [
-        "Blocare automată (Auto-lock)",
-        "Reîmprospătare ecran (Screen refresh)",
-        "Manager tie down (MTD)",
-        "Securitate la distanță (Remote security)"
-      ],
-      "correctAns": "Blocare automată (Auto-lock)",
-      "points": 20
-    },
-    {
-      "question": "Care dintre următoarele nu este o bună practică în utilizarea unui dispozitiv mobil?",
-      "options": [
-        "Realizarea de backup regulat pentru datele din dispozitiv",
-        "A nu face jailbreak dispozitivului",
-        "Așteptarea 24 de ore înainte de raportarea pierderii dispozitivului",
-        "Conștientizarea amenințărilor curente ce vizează dispozitivele mobile"
-      ],
-      "correctAns": "Așteptarea 24 de ore înainte de raportarea pierderii dispozitivului",
-      "points": 20
+      correctAns: "agent al amenințării",
+      points: 100 / 6
     }
   ]
 }
-
-
 ]
   },
    {
@@ -5862,884 +4338,115 @@ Face poză cu camera frontală după mai multe coduri greșite și o trimite.
     title:"Confidențialitatea",
     description:"Acest curs oferă o introducere practică în domeniul confidențialității.",
     banner_image:"/cap6.png",
-    achievementBadge: "Confidențialitate",
+    achievementBadge: "secure-intermediate",
     summary:` rezumat curs 6 `,
     chapters:[{
-      title:"Confidențialitatea în Era Digitală",
+      title:" capitol 1 ",
       subsections:[
       {
-        name:"Ce este Confidențialitatea?",
-        content:`
-    Confidențialitatea înseamnă dreptul de a fi lăsat în pace și de a controla ce informații despre tine sunt accesibile publicului. În trecut, oamenii puteau alege cât de mult să dezvăluie despre viața lor. Azi, tehnologia a făcut ca datele să fie colectate automat — de la site-urile vizitate, apeluri telefonice, e-mailuri, până la locația ta sau ce cumperi online.
-        
-📉 Cum ne afectează colectarea datelor?
-
-- Datele personale influențează deciziile companiilor: De exemplu, un vecin poate plăti mai puțin la asigurare auto pentru că algoritmii arată că nu conduce la ore de risc. Tu plătești mai mult doar pentru că accesezi internetul într-un mod „considerat riscant”.
-
-- Comportamentele tale online pot fi interpretate greșit: Chiar dacă duci o viață sănătoasă, obiceiurile tale online pot duce la creșteri ale primelor de asigurare.
-
-- Datele personale pot fi folosite pentru manipulare: De exemplu, Facebook poate influența comportamentul de vot al utilizatorilor doar modificând volumul de „știri dure” afișate în feed.
-
-`,
-        flashcards:[ {
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Ce înseamnă confidențialitatea în era digitală?",
-        back: "Dreptul de a controla ce informații personale sunt colectate și accesate, într-un context în care tehnologia adună date automat despre activitățile tale."
-      }
-    ]
-  }],
-        qa:[ {
-    question: "Cum pot afecta datele personale deciziile luate despre tine?",
-    answer: "Pot influența prețuri la asigurări, interpretări greșite ale comportamentului și manipularea prin conținut personalizat (ex: în feed-ul de știri)."
-  }]
+        name:"",
+        content:``,
+        flashcards:[],
+        qa:[]
       },
       {
-        name:"⚠️ Riscurile asociate datelor private",
-        content:`
-    Inconveniențe și furt de identitate
-- Datele tale pot fi folosite în campanii de marketing deranjante.
-
-- Hoții de identitate pot crea conturi bancare sau cumpăra pe numele tău.
- 
-    Asocieri cu grupuri
-- Brokerii de date te încadrează în grupuri (ex: „familii educate”, „părinți singuri”) și apoi aplică presupuneri despre tine care nu sunt neapărat corecte.
-
-    Inferențe statistice
-- Din doar 4 tranzacții pe card se pot deduce 90% din identitatea ta.
-
-- Like-urile de pe Facebook pot dezvălui orientarea sexuală, consumul de droguri sau convingerile politice.
-
-TABEL 
-
-🧾 Problemele legate de utilizarea datelor personale
-
-Problemă     Explicație
-
-Informațiile sunt colectate în secret
-Utilizatorii nu știu cine le colectează datele sau cum sunt folosite
-
-Informațiile pot fi inexacte
-Nu avem control asupra corectitudinii datelor colectate
-
-Furtul de identitate afectează profilul
-Victimele apar cu date false pe care nu le pot corecta
-
-Evaluări inexacte
-Se combină factori necunoscuți ca religie, rasă, venit, etc.
-
-Consimțământul e ambiguu sau lipsă
-Politicile de confidențialitate sunt neclare și dificil de înțeles
-
-Decizii importante bazate pe date
-Datele influențează creditul, angajarea, asigurările
-
-
-
-📊 Ce spun utilizatorii despre confidențialitate?
-- 91% cred că au pierdut controlul asupra datelor personale.
-
-- 88% spun că e greu să corectezi informații greșite de pe internet.
-
-- 80% sunt îngrijorați de accesul firmelor la datele lor.
-
-- 70% se tem că guvernul accesează datele lor fără consimțământ.
-
-- 62% își caută numele online.
-
-- 47% cred că alții îi caută online înainte să-i cunoască.
-
-- 11% au avut experiențe neplăcute din cauza informațiilor false postate online.
-
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Ce riscuri implică furtul de identitate și inferențele statistice?",
-        back: "Infractorii pot crea conturi bancare pe numele tău, iar din doar câteva tranzacții se pot deduce informații personale sensibile."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Ce probleme apar din colectarea netransparentă a datelor personale?",
-        back: "Datele pot fi inexacte, consimțământul este ambiguu, iar decizii importante precum angajarea sau creditul pot fi influențate greșit."
-      }
-    ]
-  }],
-        qa:[ {
-    question: "Ce procent dintre utilizatori cred că și-au pierdut controlul asupra datelor personale?",
-    answer: "91%."
-  },
-  {
-    question: "De ce sunt periculoase clasificările făcute de brokerii de date?",
-    answer: "Pentru că te pot încadra greșit în grupuri și pot influența decizii pe baza unor presupuneri incorecte."
-  }]
+        name:"",
+        content:``,
+        flashcards:[],
+        qa:[]
       },
     ]
     },
     {
-      title:"🔐 Protejarea Confidențialității",
-      subsections:[
-        {
-        name:"Introducere",
-        content:`
-  ✨ Este posibil să ne protejăm complet?
-
-Deși este aproape imposibil să prevenim complet colectarea datelor personale, putem reduce riscurile prin metode precum:
-- Criptografie
-
-- Bune practici de securitate
-
-- Responsabilitatea organizațiilor care colectează date
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Putem preveni complet colectarea datelor personale?",
-        back: "Nu complet, dar putem reduce riscurile prin criptografie, bune practici de securitate și responsabilitatea organizațiilor."
-      }
-    ]
-  }],
-        qa:[{
-    question: "Ce metode ajută la reducerea riscurilor privind confidențialitatea datelor?",
-    answer: "Criptografia, aplicarea bunelor practici de securitate și implicarea responsabilă a organizațiilor care colectează date."
-  }]
+      title:" capitol 2 ",
+      subsections:[{
+        name:"",
+        content:``,
+        flashcards:[],
+        qa:[]
       },
       {
-        name:"🔐 Ce este Criptografia?",
-        content:`
-    Criptografia înseamnă transformarea informațiilor într-o formă sigură, care nu poate fi citită de persoane neautorizate. Se mai numește și „scriere ascunsă”.
-
-    Exemplu istoric: Iulius Cezar schimba fiecare literă a mesajelor sale cu una aflată la 3 poziții mai jos în alfabet. Aceasta este o formă simplă de criptare. Reversul procesului se numește decriptare.
-
-📷 Diferența dintre criptografie și steganografie
-
-- Criptografia face ca mesajul să nu poată fi înțeles.
-
-- Steganografia ascunde faptul că există un mesaj. De exemplu, un fișier imagine aparent inofensiv poate conține un mesaj secret ascuns în zone neutilizate ale fișierului.
-
-🧾 Tipuri de date
-
-- Cleartext: Date necriptate, pot fi citite direct.
-
-- Plaintext: Informații clare care urmează să fie criptate sau au fost deja decriptate.
-
-- Ciphertext: Informații criptate care nu pot fi înțelese fără cheia corectă.
-
-
-🔁 Cum funcționează criptarea?
-
-- Textul clar (plaintext) este introdus într-un algoritm criptografic.
-
-- O cheie matematică este folosită pentru a crea ciphertext.
-
-- La decriptare, cheia este folosită pentru a readuce mesajul la forma inițială.
-
-
-TABEL 
-
-🛡️ Cum protejează criptografia datele?
-
-Criptografia oferă 5 tipuri esențiale de protecție:
-
-Caracteristică  Ce înseamnă  Cum protejează criptografia
-
-Confidențialitate
-Doar persoanele autorizate pot vedea datele
-Informațiile criptate pot fi văzute doar cu cheia de acces
-
-Integritate
-Asigură că datele nu au fost modificate
-Doar utilizatorii autorizați pot modifica datele
-
-Disponibilitate
-Datele sunt accesibile celor autorizați
-Fișierele criptate pot fi accesate rapid de cei care au cheia
-
-Autentificare
-Confirmă identitatea expeditorului
-Dovedește că mesajul vine de la un utilizator legitim
-
-Non-repudiere
-Imposibilitatea de a nega o acțiune efectuată
-Previne situații în care cineva neagă că a trimis un document
-
-
-🔍 Exemplu practic:
- Alice își duce mașina la service și semnează un formular pentru reparații. Mai târziu, nu poate nega că a aprobat reparația — formularul semnat servește drept dovadă (non-repudiere).
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Care este diferența dintre criptografie și steganografie?",
-        back: "Criptografia ascunde conținutul mesajului, steganografia ascunde existența mesajului."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Ce tipuri de protecție oferă criptografia?",
-        back: "Confidențialitate, integritate, disponibilitate, autentificare și non-repudiere."
-      }
-    ]
-  }],
-        qa:[{
-    question: "Ce este ciphertext?",
-    answer: "Este informația criptată care nu poate fi înțeleasă fără cheia corectă."
-  },
-  {
-    question: "Cum funcționează criptarea unui mesaj?",
-    answer: "Plaintext-ul este transformat în ciphertext printr-un algoritm și o cheie criptografică; cheia este folosită și pentru decriptare."
-  }]
-      },
-    {
-        name:"🔐 Tipuri de Criptografie",
-        content:`Există trei mari categorii de algoritmi criptografici:
-- Algoritmi de hashing
-
-- Algoritmi criptografici simetrici
-
-- Algoritmi criptografici asimetrici
-
-
-1️⃣ Algoritmi de Hashing
-
-- Ce este hashing-ul?
- Hashing-ul creează o „amprentă digitală” unică pentru un set de date. Este un proces ireversibil (nu poate fi „decodificat” înapoi). Scopul său este verificarea conținutului, nu criptarea.
-
-- Caracteristici ale unui hashing sigur:
-   * Dimensiune fixă: Indiferent de cât de mare e textul, hash-ul are aceeași lungime.
- 
-   * Unicitate: Două texte diferite nu trebuie să aibă același hash (coliziune).
-
-   * Originalitate: Imposibil de reprodus același hash din alt text.
-
-   * Securitate: Nu poți deduce textul original din hash.
-
-- Utilizare frecventă: parole, verificarea integrității fișierelor descărcate, validare pe site-uri, carduri bancare vechi.
-
-
-2️⃣ Criptografie Simetrică (cu cheie unică)
-- Se folosește aceeași cheie pentru criptare și decriptare.
-
-- Exemplu: Alice criptează un fișier cu o cheie, iar Bob îl decriptează cu aceeași cheie.
-
-- Punct slab: Distribuirea în siguranță a cheii este dificilă.
-
-- Se mai numește și criptografie cu cheie privată.
-
-- Securitate puternică, dar vulnerabilă dacă cheia e compromisă.
-
-
-3️⃣ Criptografie Asimetrică (cu chei pereche)
-- Se folosesc două chei diferite:
-    * Cheie publică: Oricine o poate avea.
-    * Cheie privată: Păstrată secretă de destinatar.
-
-- Exemplu:
-    * Bob vrea să trimită un mesaj sigur lui Alice → folosește cheia publică a lui Alice pentru a-l cripta.
-    * Doar cheia privată a lui Alice îl poate decripta.
-
-- Avantaje:
-    * Cheile nu trebuie schimbate fizic.
-    * Se pot verifica identitatea și integritatea mesajului.
-
-- Important:
-    * Funcționează în ambele sensuri: ce criptezi cu cheia privată, decriptezi cu cea publică (semnătură digitală).
-
-
-🖊️ Semnătura Digitală
-- Oferă dovada electronică că mesajul a fost trimis de cine spune că l-a trimis.
-
-- Beneficii:
-    * Verifică expeditorul
-    * Previne negarea trimiterii (non-repudiere)
-    * Confirmă integritatea mesajului
-
-- Pași simpli pentru o semnătură digitală:
-    1. Bob creează un rezumat (digest) al mesajului.
-    2. Îl criptează cu cheia sa privată (semnătura).
-    3. Trimite mesajul și semnătura către Alice.
-    4. Alice verifică semnătura cu cheia publică a lui Bob.
-
-    TABEL
-
-🔁 Ce cheie să folosești și când? 
-
-Acțiune  Cheia folosită  Tipul cheii
-
-Trimiți un mesaj criptat
-Cheia destinatarului
-Publică
-
-Citești un mesaj criptat
-Cheia ta
-Privată
-
-Trimiți semnătură digitală
-Cheia ta
-Privată
-
-Verifici semnătură digitală
-Cheia expeditorului
-Publică
-
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Ce este hashing-ul și la ce se folosește?",
-        back: "Hashing-ul creează o amprentă digitală unică pentru un set de date. Este ireversibil și se folosește pentru verificarea integrității, nu pentru criptare."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Care este diferența dintre criptografia simetrică și asimetrică?",
-        back: "Criptografia simetrică folosește o singură cheie, în timp ce cea asimetrică folosește o pereche de chei: una publică și una privată."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 3",
-    cards: [
-      {
-        front: "Ce este o semnătură digitală și ce rol are?",
-        back: "Este o dovadă criptografică că un mesaj provine de la expeditorul corect și nu a fost modificat. Se face criptând un rezumat al mesajului cu cheia privată."
-      }
-    ]
-  }],
-        qa:[ {
-    question: "Cu ce cheie criptezi un mesaj pentru a-l trimite în siguranță?",
-    answer: "Cu cheia publică a destinatarului."
-  },
-  {
-    question: "Cum verifici o semnătură digitală?",
-    answer: "Folosind cheia publică a expeditorului."
-  },
-  {
-    question: "Care este principala problemă a criptografiei simetrice?",
-    answer: "Distribuirea în siguranță a cheii unice între expeditor și destinatar."
-  }]
-      },
-    {
-        name:"💻 Cum se aplică criptografia?",
-        content:`
-  🔒 Prin software
-- Fișiere individuale – criptare manuală, fișier cu fișier.
-
-- Sistem de fișiere – criptarea tuturor fișierelor dintr-un folder.
-
-- Criptare de disc complet – protejează întreaga unitate (HDD/SSD).
-
-🔐 Prin hardware
-- Se folosește criptare încorporată în dispozitiv (ex: stick USB criptat):
-      * Nu funcționează fără parolă.
-      * Se criptează automat tot ce se copiază pe el.
-      * Se poate dezactiva sau șterge de la distanță dacă e pierdut.
-
-- HDD-uri care se auto-criptează:
-      * Verifică automat identitatea dispozitivului.
-      * Pot șterge cheile de decriptare dacă accesul e neautorizat.
-      * Folosite în guvern, bănci, imprimante de birou, POS-uri.
-`,
-        flashcards:[ {
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Care sunt metodele de criptare prin software?",
-        back: "Criptare manuală a fișierelor individuale, criptarea folderelor (sistem de fișiere) și criptarea completă a discului (HDD/SSD)."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Cum funcționează criptarea hardware pe un stick USB criptat?",
-        back: "Tot ce se copiază pe el se criptează automat, funcționează doar cu parolă și poate fi dezactivat sau șters de la distanță."
-      }
-    ]
-  }],
-        qa:[{
-    question: "Ce este criptarea completă de disc?",
-    answer: "O metodă care protejează întreaga unitate de stocare (HDD/SSD), nu doar fișiere individuale."
-  },
-  {
-    question: "Unde sunt folosite în mod obișnuit HDD-urile care se auto-criptează?",
-    answer: "În guvern, bănci, imprimante de birou și sisteme POS."
-  }]
-      },
-    {
-        name:"📜 Certificate Digitale",
-        content:`
-    Ce este un certificat digital?
-Un certificat digital este un document electronic care leagă identitatea unei persoane sau a unui server de o cheie publică, fiind semnat de o autoritate de încredere (ex: o companie certificatoare).
-
-- Verifică dacă cheia publică aparține cu adevărat persoanei menționate.
-
-- Permite destinatarului (ex: Alice) să aibă încredere că mesajul primit de la Bob este autentic.
-
-- Previne atacurile prin care cineva se dă drept proprietarul unei chei publice.
-
-
-🌐 Certificatele digitale ale serverelor
-
-Certificatele digitale de server sunt folosite pentru:
-- Verificarea identității site-ului web – browserul utilizatorului poate confirma că site-ul este autentic.
-
-- Asigurarea conexiunii criptate – toate datele transmise între browser și server sunt protejate.
-
-
-🔄 Cum funcționează procesul de schimb de chei (handshake TLS)
-
-1. ClientHello – Browserul trimite informații criptografice către server.
-
-2. ServerHello – Serverul răspunde cu propriul certificat digital.
-
-3. Verificare + ClientKeyExchange – Browserul verifică certificatul, generează un „pre-master secret”, îl criptează cu cheia publică a serverului și îl trimite înapoi.
-
-4. Creare sesiune securizată – Serverul decriptează secretul și ambii generează „chei de sesiune” pentru criptarea datelor din timpul conexiunii.
-
-
-🔐 Cheile de sesiune sunt chei simetrice (același cod la ambele capete), folosite pentru viteză și eficiență.
-
-🔒 Cum știi dacă un site este securizat?
-- Adresa începe cu https:// (nu http://).
-
-- Apare un simbol cu lacăt în bara browserului.
-
-- La click pe lacăt, vezi informații despre certificatul digital (ex: cine l-a emis și cui).
-
-
-🌟 Certificatul SSL EV (Extended Validation)
-- Oferă cel mai înalt nivel de încredere.
-
-- Se acordă doar după verificări riguroase asupra firmei.
-
-- Bara de adresă devine verde în browser dacă site-ul este sigur.
-
-- Bara devine roșie dacă site-ul este periculos sau suspect.
-
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Ce este un certificat digital și ce rol are?",
-        back: "Este un document electronic care leagă o identitate de o cheie publică și confirmă autenticitatea acesteia printr-o autoritate de încredere."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Cum știi dacă un site este securizat prin certificat digital?",
-        back: "Adresa începe cu https://, apare un lacăt în bară, iar la click poți vedea cine a emis certificatul."
-      }
-    ]
-  }],
-        qa:[{
-    question: "Ce tip de chei sunt folosite pentru criptarea sesiunii după handshake-ul TLS?",
-    answer: "Chei simetrice (chei de sesiune) – aceleași la ambele capete."
-  },
-  {
-    question: "Ce este un certificat SSL EV și cum se recunoaște în browser?",
-    answer: "Este un certificat cu validare extinsă, afișează bara verde dacă site-ul este sigur și roșie dacă este periculos."
-  }]
-      },
-    {
-        name:"🔐 Cele Mai Bune Practici de Protejare a Confidențialității",
-        content:`
-  Recomandări pentru utilizatori:
-- Criptează documentele sensibile care conțin date personale (CNP, număr de cont etc.) și salvează cheile într-o aplicație de tip „password manager”.
-
-- Folosește parole puternice pe toate conturile.
-
-- Distruge documentele financiare înainte de a le arunca.
-
-- Nu purta CNP-ul în portofel și nu-l scrie pe documente.
-
-- Nu da informații personale prin telefon sau email.
-
-- Păstrează datele sensibile într-un loc sigur acasă.
-
-- Ai grijă ce postezi pe rețele sociale și cine are acces la informații. Oferă profiluri limitate „prietenilor parțiali”.
-
-- Păstrează doar ultimele 3 luni de extrase bancare; scanează și protejează cu parolă documentele pe care trebuie să le păstrezi.
-
-- Instalează un software antispyware.
-
-- Folosește un blocator de reclame popup.
-
-- Controlează cookie-urile din browser și setează-le să se șteargă automat.
-
-- Folosește modul privat de navigare și șterge istoricul după fiecare sesiune.
-
-- Activează opțiunile de confidențialitate din browser.
-
-- Activează WPA2 Personal pe rețelele Wi-Fi.
-
-- Nu oferi date pe site-uri nesecurizate (fără lacăt 🔒 și „https://”).
-
-- Evită site-urile care cer prea multe informații inutile (ex: parole de la alte conturi).
-`,
-        flashcards:[{
-    title: "Flashcard 1",
-    cards: [
-      {
-        front: "Ce măsuri pot lua utilizatorii pentru protejarea datelor personale?",
-        back: "Criptarea documentelor, parole puternice, distrugerea documentelor fizice, controlul informațiilor postate online și stocarea în siguranță."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 2",
-    cards: [
-      {
-        front: "Ce setări de confidențialitate sunt recomandate în browser?",
-        back: "Ștergerea automată a cookie-urilor, folosirea modului privat, activarea setărilor de confidențialitate și blocarea reclamelor popup."
-      }
-    ]
-  }],
-        qa:[ {
-    question: "Ce trebuie să faci înainte să arunci documente financiare?",
-    answer: "Să le distrugi pentru a preveni furtul de date."
-  },
-  {
-    question: "De ce nu este recomandat să purtăm CNP-ul în portofel?",
-    answer: "Pentru a evita expunerea accidentală a datelor personale în cazul pierderii sau furtului portofelului."
-  }]
-      },
-    {
-        name:"🏢 Responsabilitățile Organizațiilor",
-        content:`
-        TABEL 
-
-  Organizațiile care colectează date personale au obligația de a le proteja. Tabelul de mai jos arată greșeli frecvente și ce măsuri ar fi trebuit luate:
-Eroare comisă   Măsură recomandată   Explicație
-
-A cerut email și parolă și le-a stocat în clartext
-Colectează doar informații necesare
-Nu cere informații inutile și protejează-le
-
-A păstrat datele cardului 30 de zile după cumpărare
-Păstrează datele doar cât este necesar
-Șterge datele imediat după finalizarea tranzacției
-
-A folosit date reale în sesiuni de training
-Nu folosi date reale când nu e necesar
-Folosește date fictive în scop educațional
-
-A trimis fișiere sensibile din greșeală
-Restricționează accesul la date
-Angajații care nu au nevoie de date nu ar trebui să le acceseze
-
-Toți angajații aveau acces complet la sistem
-Limitează accesul administrativ
-Doar cei cu rol specific ar trebui să poată modifica sistemul
-
-A folosit un algoritm de criptare nesigur
-Folosește metode testate și standard
-Utilizează criptare validată de experți
-
-A aruncat documente cu date personale la gunoi
-Elimină datele în siguranță
-Distruge fizic documentele sau hard disk-urile
-
-`,
-        flashcards:[{
-    title: "Flashcard 3",
-    cards: [
-      {
-        front: "Ce măsură trebuie luată dacă datele cardului sunt păstrate prea mult timp?",
-        back: "Păstrează datele doar cât este necesar – șterge-le după finalizarea tranzacției."
-      }
-    ]
-  },
-  {
-    title: "Flashcard 4",
-    cards: [
-      {
-        front: "Cum se gestionează fișierele sensibile pentru a evita erorile?",
-        back: "Se restricționează accesul la date – doar angajații care au nevoie le pot accesa."
-      }
-    ]
-  }],
-        qa:[ {
-    question: "Ce eroare apare dacă se stochează emailuri și parole în clartext?",
-    answer: "Datele nu sunt protejate adecvat; trebuie colectate doar informațiile necesare și criptate."
-  },
-  {
-    question: "Ce măsură trebuie luată pentru a evita folosirea greșită a datelor în scopuri educaționale?",
-    answer: "Folosirea de date fictive în sesiuni de training."
-  }]
-      }
-    ]
+        name:"",
+        content:``,
+        flashcards:[],
+        qa:[]
+      },]
     },
   ],
        quiz:[
-      {
-  "title": "Quiz 1",
-  "totalPoints": 100,
-  "questions": [
+      
     {
-      "question": "Care dintre următoarele NU este adevărată despre confidențialitate?",
-      "options": [
-        "Confidențialitatea este dreptul de a fi lăsat în pace în măsura în care dorești.",
-        "Astăzi, oricine poate atinge orice nivel de intimitate dorit.",
-        "Confidențialitatea este dificilă din cauza volumului mare de date acumulate automat.",
-        "Confidențialitatea este libertatea față de atenție, observație sau interferență, în funcție de decizia ta."
+  title: "Quiz 1",
+  totalPoints: 100,
+  questions: [
+    {
+      question: "Fiecare dintre următoarele este un motiv pentru care este dificil să ne apărăm de atacatorii de astăzi, cu excepția:",
+      options: [
+        "detectarea rapidă a vulnerabilităților",
+        "complexitatea uneltelor de atac",
+        "confuzia utilizatorului",
+        "sofisticarea crescută a atacurilor"
       ],
-      "correctAns": "Astăzi, oricine poate atinge orice nivel de intimitate dorit.",
-      "points": 20
+      correctAns: "detectarea rapidă a vulnerabilităților",
+      points: 100 / 6
     },
     {
-      "question": "Care dintre următoarele NU este un risc asociat utilizării datelor private?",
-      "options": [
-        "inconveniente personale și furt de identitate",
-        "infectarea dispozitivelor cu malware",
-        "asocieri cu grupuri",
-        "inferințe statistice"
+      question: "În sens general, „securitatea” înseamnă:",
+      options: [
+        "disponibilă doar pe computere specializate",
+        "protejare împotriva acțiunilor directe",
+        "pașii necesari pentru a proteja o persoană sau o proprietate împotriva răului",
+        "ceva ce se poate atinge relativ ușor"
       ],
-      "correctAns": "asocieri cu grupuri",
-      "points": 20
+      correctAns: "pașii necesari pentru a proteja o persoană sau o proprietate împotriva răului",
+      points: 100 / 6
     },
     {
-      "question": "Care dintre următoarele NU este o problemă ridicată în legătură cu modul în care sunt colectate și utilizate datele private?",
-      "options": [
-        "Datele sunt colectate și păstrate în secret.",
-        "Acuratețea datelor nu poate fi verificată.",
-        "Prin lege, toate datele criptate trebuie să conțină un punct de acces ascuns („backdoor”).",
-        "Consimțământul informat lipsește sau este greșit înțeles."
+      question: "__________ asigură faptul că doar persoanele autorizate pot vedea informațiile.",
+      options: [
+        "Integritatea",
+        "Confidențialitatea",
+        "Disponibilitatea",
+        "Autorizarea"
       ],
-      "correctAns": "Prin lege, toate datele criptate trebuie să conțină un punct de acces ascuns („backdoor”).",
-      "points": 20
+      correctAns: "Confidențialitatea",
+      points: 100 / 6
     },
     {
-      "question": "__________ ascunde existența datelor.",
-      "options": [
-        "Criptografie",
-        "Criptare simetrică",
-        "Decriptare asimetrică",
-        "Steganografie"
+      question: "De ce pot brokerii să ceară un preț atât de mare pentru ceea ce vând?",
+      options: [
+        "Sunt profesioniști licențiați",
+        "Țintele atacurilor sunt mereu corporații bogate",
+        "Vulnerabilitatea descoperită este necunoscută și e puțin probabil să fie corectată rapid",
+        "Lucrează în echipă și toți trebuie plătiți"
       ],
-      "correctAns": "Steganografie",
-      "points": 20
+      correctAns: "Vulnerabilitatea descoperită este necunoscută și e puțin probabil să fie corectată rapid",
+      points: 100 / 6
     },
     {
-      "question": "Ce este textul criptat (ciphertext)?",
-      "options": [
-        "Proceduri bazate pe formule matematice pentru criptare și decriptare.",
-        "Valoare matematică introdusă într-un algoritm.",
-        "Date criptate.",
-        "Cheia publică a unui proces criptografic simetric."
+      question: "Fiecare dintre următoarele este un strat succesiv în realizarea securității informației, cu excepția:",
+      options: [
+        "politici și proceduri",
+        "oameni",
+        "produse",
+        "scopuri"
       ],
-      "correctAns": "Date criptate.",
-      "points": 20
-    }
-  ]
-},
-{
-  "title": "Quiz 2",
-  "totalPoints": 100,
-  "questions": [
-    {
-      "question": "Care dintre următoarele este o operațiune „unidirecțională”, ale cărei rezultate nu pot fi folosite pentru a recupera datele inițiale?",
-      "options": [
-        "hash",
-        "criptografie simetrică",
-        "Message Digest Encryption (MDE)",
-        "criptografie asimetrică"
-      ],
-      "correctAns": "hash",
-      "points": 20
+      correctAns: "scopuri",
+      points: 100 / 6
     },
     {
-      "question": "Cum se numesc datele care urmează să fie criptate prin introducerea lor într-un algoritm criptografic?",
-      "options": [
-        "ciphertext (text criptat)",
-        "plaintext (text clar)",
-        "cleartext",
-        "opentext"
+      question: "Ce este o persoană sau element care are capacitatea de a realiza o amenințare?",
+      options: [
+        "exploatator",
+        "agent al amenințării",
+        "element periculos",
+        "agent de risc"
       ],
-      "correctAns": "plaintext (text clar)",
-      "points": 20
-    },
-    {
-      "question": "Care dintre acestea NU este o formă de protecție de bază oferită de criptografie pentru informații?",
-      "options": [
-        "pierdere de risc (risk loss)",
-        "autenticitate",
-        "integritate",
-        "confidențialitate"
-      ],
-      "correctAns": "pierdere de risc (risk loss)",
-      "points": 20
-    },
-    {
-      "question": "Care dintre zonele unui fișier NU este folosită de steganografie pentru a ascunde date?",
-      "options": [
-        "date ce descriu conținutul sau structura datelor reale",
-        "structura directoarelor din sistemul de fișiere",
-        "câmpurile din antetul fișierului",
-        "zonele ce conțin datele efective ale fișierului"
-      ],
-      "correctAns": "structura directoarelor din sistemul de fișiere",
-      "points": 20
-    },
-    {
-      "question": "Dovada că un utilizator a trimis un mesaj e-mail se numește:",
-      "options": [
-        "repudiere",
-        "integritate",
-        "nonrepudiere",
-        "disponibilitate"
-      ],
-      "correctAns": "nonrepudiere",
-      "points": 20
-    }
-  ]
-},
-{
-  "title": "Quiz 3",
-  "totalPoints": 100,
-  "questions": [
-    {
-      "question": "Un/una __________ nu este decriptat(ă), ci este folosit(ă) doar pentru comparație.",
-      "options": [
-        "flux (stream)",
-        "rezumat (digest)",
-        "algoritm",
-        "cheie"
-      ],
-      "correctAns": "rezumat (digest)",
-      "points": 20
-    },
-    {
-      "question": "Care dintre următoarele NU este o caracteristică a unui algoritm de hash sigur?",
-      "options": [
-        "Nu se poate genera un mesaj dintr-un hash predefinit.",
-        "Coliziunile ar trebui să fie rare.",
-        "Rezultatele funcției de hash nu trebuie să fie reversibile.",
-        "Hash-ul ar trebui să aibă mereu o dimensiune variabilă."
-      ],
-      "correctAns": "Hash-ul ar trebui să aibă mereu o dimensiune variabilă.",
-      "points": 20
-    },
-    {
-      "question": "Câte chei se folosesc în criptografia asimetrică?",
-      "options": [
-        "una",
-        "două",
-        "trei",
-        "patru"
-      ],
-      "correctAns": "două",
-      "points": 20
-    },
-    {
-      "question": "Care dintre următoarele NU este o metodă de criptare software?",
-      "options": [
-        "criptarea fișierelor individuale",
-        "criptarea întregului disc",
-        "criptarea folosind sistemul de fișiere",
-        "criptarea folosind un cip hardware separat"
-      ],
-      "correctAns": "criptarea folosind un cip hardware separat",
-      "points": 20
-    },
-    {
-      "question": "Dacă Bob vrea să-i trimită un mesaj securizat lui Alice folosind un algoritm criptografic asimetric, ce cheie va folosi pentru criptarea mesajului?",
-      "options": [
-        "cheia privată a lui Alice",
-        "cheia publică a lui Alice",
-        "cheia publică a lui Bob",
-        "cheia privată a lui Bob"
-      ],
-      "correctAns": "cheia publică a lui Alice",
-      "points": 20
-    }
-  ]
-},
-{
-  "title": "Quiz 4",
-  "totalPoints": 100,
-  "questions": [
-    {
-      "question": "O semnătură digitală poate oferi fiecare dintre următoarele beneficii, CU EXCEPȚIA:",
-      "options": [
-        "dovedirea integrității mesajului",
-        "verificarea destinatarului",
-        "verificarea expeditorului",
-        "impunerea non-repudierii"
-      ],
-      "correctAns": "verificarea destinatarului",
-      "points": 20
-    },
-    {
-      "question": "Care este cel mai important avantaj al criptării hardware față de criptarea software?",
-      "options": [
-        "Criptarea software nu poate fi folosită pe calculatoare vechi.",
-        "Criptarea hardware este de până la 10 ori mai rapidă decât cea software.",
-        "Software-ul care criptează poate fi supus atacurilor.",
-        "Criptarea hardware nu oferă avantaje reale."
-      ],
-      "correctAns": "Criptarea hardware este de până la 10 ori mai rapidă decât cea software.",
-      "points": 20
-    },
-    {
-      "question": "Ce apare în browserul web când ești conectat la un site securizat ce folosește un certificat digital?",
-      "options": [
-        "http://",
-        "o cheie franceză (wrench)",
-        "un lacăt (padlock)",
-        "un mesaj galben de avertizare"
-      ],
-      "correctAns": "un lacăt (padlock)",
-      "points": 20
-    },
-    {
-      "question": "Care dintre următoarele NU este o bună practică privind confidențialitatea datelor personale?",
-      "options": [
-        "Folosirea modului de navigare privată în browser.",
-        "Distrugerea documentelor financiare înainte de a le arunca.",
-        "Folosirea unor parole puternice pentru toate conturile.",
-        "Purtarea numărului de asigurare socială asupra ta pentru a nu fi furat de acasă."
-      ],
-      "correctAns": "Purtarea numărului de asigurare socială asupra ta pentru a nu fi furat de acasă.",
-      "points": 20
-    },
-    {
-      "question": "Care dintre următoarele NU este o responsabilitate a unei organizații privind datele private ale utilizatorilor?",
-      "options": [
-        "Colectarea doar a informațiilor personale necesare.",
-        "Folosirea metodelor testate și acceptate din industrie.",
-        "Păstrarea informațiilor personale pentru maximum 365 de zile.",
-        "Utilizarea informațiilor personale chiar și când nu este necesar."
-      ],
-      "correctAns": "Utilizarea informațiilor personale chiar și când nu este necesar.",
-      "points": 20
+      correctAns: "agent al amenințării",
+      points: 100 / 6
     }
   ]
 }
-
-
-
-
 ]
   }
 

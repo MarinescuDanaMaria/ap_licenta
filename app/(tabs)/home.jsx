@@ -1,26 +1,5 @@
-// import { SafeAreaView, StyleSheet } from 'react-native';
-// import Header from '../../components/Home/Header';
-// import NoCourse from '../../components/Home/NoCourse';
-
-// export default function Home() {
-//   return (
-//     <SafeAreaView style={styles.container}>
-//       <Header />
-//       <NoCourse />
-//     </SafeAreaView>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     paddingTop: 20, // ajustează aici cât de jos vrei să înceapă
-//     backgroundColor: '#f9f9f9' // sau ce culoare folosești în aplicație
-//   }
-// });
-
 import { useRouter } from 'expo-router';
-import { collection, getDocs } from 'firebase/firestore';
+import { collection, doc, getDocs, updateDoc } from 'firebase/firestore';
 import { useContext, useEffect, useState } from 'react';
 import { ActivityIndicator, Animated, FlatList, ImageBackground, Platform, Text, View } from 'react-native';
 import CourseList from '../../components/Home/CourseList';
@@ -31,6 +10,7 @@ import { UserDetailContext } from '../../context/UserDetailContext';
 import { db } from './../../config/firebaseConfig';
 import Colors from './../../constants/Colors';
 
+
 export default function Home() {
   const { userDetail } = useContext(UserDetailContext);
   const [courseList, setCourseList] = useState([]);
@@ -40,21 +20,16 @@ export default function Home() {
   const [showLevelUp, setShowLevelUp] = useState(false);
   const [fadeAnim] = useState(new Animated.Value(0));
 
-  const router = useRouter();
+  const router = useRouter(); 
 
-  // useEffect(() => {
-  //   if (userDetail === null) {
-  //     router.replace('/auth/signIn');
-  //   }
-  // }, [userDetail]);
-
-  useEffect(() => {
+useEffect(() => {
   if (userDetail) {
-    const oldLevel = userDetail?.level || 0;
     const newLevel = Math.floor((userDetail.points || 0) / 100) + 1;
-
-    if (newLevel > oldLevel) {
+    const lastSeenLevel = userDetail.lastSeenLevel || 1;
+    
+    if (newLevel > lastSeenLevel) {
       setShowLevelUp(true);
+
       Animated.sequence([
         Animated.timing(fadeAnim, {
           toValue: 1,
@@ -68,10 +43,12 @@ export default function Home() {
           useNativeDriver: true,
         }),
       ]).start(() => setShowLevelUp(false));
+
+      const userRef = doc(db, 'users', userDetail.uid);
+      updateDoc(userRef, { lastSeenLevel: newLevel });
     }
   }
-}, [userDetail]);
-
+}, [userDetail?.points]);
 
   useEffect(() => {
     if (initialLoad) {
@@ -108,8 +85,13 @@ export default function Home() {
       source={require('../../assets/images/gradient.png')}
       style={{ flex: 1, resizeMode: 'cover' }}
     >
+     {/* <LinearGradient
+    colors={['#f0f9ff', '#cfe0f5', '#a5b4fc']}
+
+    style={{ flex: 1 }}
+  > */}
       <FlatList
-        data={[]} // dacă folosești doar ListHeaderComponent
+        data={[]} 
         onRefresh={GetCourseList}
         refreshing={loading}
         contentContainerStyle={{
@@ -146,5 +128,8 @@ export default function Home() {
         }
       />
     </ImageBackground>
+  
   );
 }
+
+

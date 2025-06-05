@@ -37,7 +37,7 @@ export default function Profile() {
 
   const getBadgeInfo = (badgeName) => {
     switch (badgeName) {
-      case "Introducere în securitate":
+      case "secure-beginner":
         return {
           icon: "shield-checkmark",
           color: "#4CAF50",
@@ -61,6 +61,12 @@ export default function Profile() {
           color: "#9C27B0",
           description: "Expert în analiza cazurilor reale!"
         };
+      //  case "secure-beginner":
+      // return {
+      //   icon: "bulb",
+      //   color: "#795548",
+      //   description: "Ai finalizat cursul introductiv de securitate!"
+      // };
       default:
         return {
           icon: "ribbon",

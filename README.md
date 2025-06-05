@@ -12,26 +12,45 @@ npm install react-native-flip-card
 
 npm install react-native-vector-icons
 
-///////
+npm install react-native-markdown-display
 
 PENTRU A ADAUGA/ ACTUALIZA CURSURILE : modif fisierul CoursesData.js , dupa rulam
 
 node seedCourses.js
 
-///
+------------------ FUNCTIONALITATI NOI ------------------
 
-pe harta cursurilor vreau sa apara si celelalte cursuri, chiar daca nu sunt deblocate inca , cu un lacat in dreptul numelor lor,si intre cursuri sa fie o linie punctata serpuita, iar ordinea lor sa porneasca de jos in sus ( primul sa fie jos de tot , si sa pot sa derulez in sus pana la ultimul ) totodata vreau sa aranjezi scrisul din fiecare content din fisierul CoursesData.js , unde e tabel sa formatezi scrisul sub forma de tabel, si stiul sa fie poppins, si de asemenea, vreau la finalul quiz-ului sa apara in continuare si ce raspunsuri am gresit si care e raspunsul corect la ele, inainte mergea aceasta functionalitate, codul e acolo, bara de progres de pe profile nu merge, iar cand apas pe optiunea simulator atacuri din home, nu face nimic
+- alerta ca ai trecut la urm nivel - HOME
+- harta
+- simulator
+  clasament cu toti utilizatorii
+- insigne - PROFILE
 
-CE NU MERGE
+------------------ DE REZOLVAT ------------------
 
-- alerta ca ai trecut la urm nivel ( de revazut Home din tabs)
-- pe harta , vreau sa apara deblocate cursurile incepute
-- pe pagina de explore, vreau sa apara doar cursurile neincepute
 - DE ADAUGAT TOATE CURSURILE - 4
-- de stilizat scrisul din cursuri ( la sf ) - si vazut de ce nu ma duce la inc cursului
-- de vazut daca functioneaza insignele ( am term un curs si nu s au adaugat, nici in bd)
-- dupa ce termin un curs, adica progres =100 % , sa apara optiunea reincepe langa el
+- de stilizat scrisul din cursuri ( la sf )
+  ( in chapter view , chapterContentBlock ( shared ), aici trb facut )
+- insigne ( mai am de lucru aici ) - PROFILE
+  ++ vazut cum securizez datele din aplicatie
 
-++ de vazut cum integrez AI , poate un chatbot sau ceva care iti pune o intrebare zilnica cum te loghezi
+------------------ IDEI AI - de discutat ( 4 ) ------------------
 
-++ de adaugat un clasament cu toti utilizatorii , si optiunea de a i adauga ca prieteni - din profil , nu mai punem in tab
+- **Adaptive Learning**
+
+  - Identificarea punctelor slabe și generarea de conținut suplimentar ( exerciții personalizate )
+
+  - **Tutor Virtual**
+  - Explicații personalizate pentru concepte
+    (
+    un chatbox in care eu introduc termenii pe care nu i am inteles, si el imi face o analogie, o schema sau un desen, sa retin mai usor
+    )
+
+- **Asistent de Creare a Cursurilor**
+
+  - optiunea de a genera un rezumat al cursului ( pentru ca am cursurile destul de lungi )
+
+- **Integrare cu Asistenți Vocali**
+  - Citirea conținutului ( pentru cand esti plecat - ca un fel de audiobook )
+
+// de refacut tabelele in json si dupa uploadat si veriif inca o data restul

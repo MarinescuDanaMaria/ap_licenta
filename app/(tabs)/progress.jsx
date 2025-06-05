@@ -1,12 +1,13 @@
 // import { Ionicons } from '@expo/vector-icons';
 // import { useRouter } from 'expo-router';
-// import { collection, getDocs } from 'firebase/firestore';
+// import { arrayUnion, collection, doc, getDocs, updateDoc } from 'firebase/firestore';
 // import { useContext, useEffect, useState } from 'react';
-// import { Dimensions, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+// import { Dimensions, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 // import Svg, { Path } from 'react-native-svg';
 // import { db } from '../../config/firebaseConfig';
 // import Colors from '../../constants/Colors';
 // import { UserDetailContext } from '../../context/UserDetailContext';
+
 
 // export default function CourseRoadmap() {
 //   const [courses, setCourses] = useState([]);
@@ -26,7 +27,7 @@
 //         ...doc.data(),
 //         docId: doc.id
 //       }));
-//       setCourses(coursesData);
+//       setCourses(coursesData.reverse());
 //     } catch (error) {
 //       console.error("Error fetching courses:", error);
 //     } finally {
@@ -34,13 +35,53 @@
 //     }
 //   };
 
-//   const isCourseUnlocked = (courseTitle) => {
-//     return userDetail?.unlockedCourses?.includes(courseTitle);
-//   };
+//   useEffect(() => {
+//   if (!loading && courses.length > 0) {
+//     courses.forEach(async (course) => {
+//       //const userProgress = userDetail?.startedCourses?.[course.docId]?.completedChapters || [];
+//       //const userProgress = (userDetail?.startedCourses?.[course.docId]?.completedChapters || []).map(Number);
+//       const userProgress = [...new Set((userDetail?.startedCourses?.[course.docId]?.completedChapters || []).map(Number))];
+//       const totalChapters = course?.chapters?.length || 0;
+//       const hasCompleted = userProgress.length === totalChapters;
+//       const alreadyHasBadge = userDetail?.badges?.includes(course.achievementBadge);
 
-//   const isCourseCompleted = (courseId) => {
-//     return userDetail?.completedCourses?.includes(courseId);
-//   };
+//       console.log('📘 Curs:', course.title);
+//       console.log('✔️ Completat:', hasCompleted);
+//       console.log('🎖️ Are insignă deja:', alreadyHasBadge);
+
+//       if (hasCompleted && course.achievementBadge && !alreadyHasBadge) {
+//         console.log('🏅 Atribuire insignă:', course.achievementBadge);
+//         try {
+//           await updateDoc(doc(db, 'users', userDetail.uid), {
+//             badges: arrayUnion(course.achievementBadge)
+//           });
+//         } catch (err) {
+//           console.error('⚠️ Eroare la actualizare insignă:', err);
+//         }
+//       }
+//     });
+//   }
+// }, [loading, courses]);
+
+
+//   const isCourseUnlocked = (courseId) => {
+//   const started = userDetail?.startedCourses?.[courseId]?.completedChapters;
+//   return Array.isArray(started) && started.length > 0;
+// };
+
+// // const isCourseCompleted = (course) => {
+// //   const userProgress = userDetail?.startedCourses?.[course.docId]?.completedChapters;
+// //   return Array.isArray(userProgress) && course?.chapters?.length > 0 && userProgress.length === course.chapters.length;
+// // };
+
+// const isCourseCompleted = (course) => {
+//   const userProgress = userDetail?.startedCourses?.[course.docId]?.completedChapters || [];
+//   const totalChapters = course?.chapters?.length || 0;
+//   return userProgress.length === totalChapters;
+// };
+
+
+
 
 //   const getBadgeIcon = (courseTitle) => {
 //     if (userDetail?.badges?.includes(courseTitle)) {
@@ -61,7 +102,7 @@
 //   };
 
 //   const handleCoursePress = (course) => {
-//     if (isCourseUnlocked(course.title)) {
+//     if (isCourseUnlocked(course.docId)) {
 //       router.push({
 //         pathname: "/courseView/" + course.docId,
 //       });
@@ -71,100 +112,126 @@
 //   };
 
 //   return (
-//     <ScrollView contentContainerStyle={styles.container}>
-//       <View style={styles.header}>
-//         <Text style={styles.headerTitle}>Harta Cursurilor</Text>
-//         <Text style={styles.headerSubtitle}>Nivel {userDetail?.level || 1} • {userDetail?.rank}</Text>
-//         <View style={styles.progressBar}>
-//           <View style={[styles.progressFill, { width: `${(userDetail?.points % 100)}%` }]} />
+//     <ImageBackground
+//       source={require('../../assets/images/gradient.png')}
+//       style={styles.container}
+//     >
+//       <ScrollView contentContainerStyle={styles.scrollContainer}>
+//         <View style={styles.header}>
+//           <Text style={styles.headerTitle}>Harta Cursurilor</Text>
+//           <Text style={styles.headerSubtitle}>Nivel {userDetail?.level || 1} • {userDetail?.rank}</Text>
+//           <View style={styles.progressBar}>
+//             <View style={[styles.progressFill, { width: `${(userDetail?.points % 100)}%` }]} />
+//           </View>
+//           <Text style={styles.pointsText}>
+//             {userDetail?.points || 0} puncte • {100 - (userDetail?.points % 100)} până la următorul nivel
+//           </Text>
 //         </View>
-//         <Text style={styles.pointsText}>{userDetail?.points || 0} puncte • {100 - (userDetail?.points % 100)} până la următorul nivel</Text>
-//       </View>
 
-//       <View style={styles.roadmapContainer}>
-//         <Svg height={courses.length * 200} width={screenWidth}>
-//           <Path
-//             d={`M${screenWidth/2} 0 ${courses.map((_, i) => 
-//               `Q${i % 2 ? screenWidth/2 + 50 : screenWidth/2 - 50} ${i * 200 + 100} ${screenWidth/2} ${(i + 1) * 200}`
-//             ).join(' ')}`}
-//             fill="none"
-//             stroke={Colors.PRIMARY}
-//             strokeWidth={3}
-//             strokeDasharray="8,8"
-//           />
-//         </Svg>
+//         <View style={styles.roadmapContainer}>
+//           <Svg height={courses.length * 250} width={screenWidth}>
+//             <Path
+//               d={`M${screenWidth/2} 0 ${courses.map((_, i) => {
+//               const y = i * 250;
+//               const controlX = i % 2 ? screenWidth/2 + 120 : screenWidth/2 - 120;
+//               return `Q${controlX} ${y + 160} ${screenWidth/2} ${y + 250}`;
+//               }).join(' ')}`}
 
-//         {courses.map((course, index) => {
-//           const isUnlocked = isCourseUnlocked(course.title);
-//           const isCompleted = isCourseCompleted(course.docId);
-//           const badgeIcon = getBadgeIcon(course.title);
-//           const isLeft = index % 2 === 0;
+//               fill="none"
+//               stroke={Colors.PRIMARY}
+//               strokeWidth={3}
+//               strokeDasharray="8,8"
+//               strokeLinecap="round"
+//             />
+//           </Svg>
 
-//           return (
-//             <View
-//               key={course.docId}
-//               style={[
-//                 styles.courseNode,
-//                 {
-//                   top: index * 200,
-//                   left: isLeft ? 20 : screenWidth - 220,
-//                 }
-//               ]}
-//             >
-//               <TouchableOpacity
+//           {courses.map((course, index) => {
+//             const isUnlocked = isCourseUnlocked(course.docId);
+//             const isCompleted = isCourseCompleted(course);
+//             const badgeIcon = getBadgeIcon(course.title);
+//             const isLeft = index % 2 === 0;
+//             const verticalPosition = index * 250;
+
+//             return (
+//               <View
+//                 key={course.docId}
 //                 style={[
-//                   styles.courseButton,
-//                   isCompleted ? styles.completed : isUnlocked ? styles.unlocked : styles.locked
+//                   styles.courseNode,
+//                   {
+//                     top: verticalPosition,
+//                     left: isLeft ? 20 : screenWidth - 220,
+//                   }
 //                 ]}
-//                 onPress={() => handleCoursePress(course)}
-//                 disabled={!isUnlocked}
 //               >
-//                 <View style={styles.courseContent}>
-//                   <View style={styles.courseHeader}>
-//                     <Text style={styles.courseTitle}>{course.title}</Text>
-//                     {badgeIcon && (
-//                       <View style={styles.badgeContainer}>
-//                         <Ionicons name={badgeIcon} size={24} color={Colors.WHITE} />
-//                       </View>
-//                     )}
-//                   </View>
-//                   <Text style={styles.courseDescription} numberOfLines={2}>
-//                     {course.description}
-//                   </Text>
-//                   <View style={styles.courseStatus}>
-//                     <Ionicons
-//                       name={isCompleted ? "checkmark-circle" : isUnlocked ? "lock-open" : "lock-closed"}
-//                       size={24}
-//                       color={isCompleted ? Colors.GREEN : isUnlocked ? Colors.PRIMARY : Colors.GRAY}
-//                     />
-//                     <Text style={[styles.statusText, { color: isCompleted ? Colors.GREEN : isUnlocked ? Colors.PRIMARY : Colors.GRAY }]}>
-//                       {isCompleted ? "Completat" : isUnlocked ? "Deblocat" : "Blocat"}
+//                 <TouchableOpacity
+//                   style={[
+//                     styles.courseButton,
+//                      isCompleted ? styles.completed : isUnlocked ? styles.unlocked : styles.locked
+//                   ]}
+//                   onPress={() => handleCoursePress(course)}
+//                   //disabled={!isUnlocked}
+//                 >
+//                   <View style={styles.courseContent}>
+//                     <View style={styles.courseHeader}>
+//                       <Text style={styles.courseTitle}>{course.title}</Text>
+//                       {badgeIcon && (
+//                         <View style={styles.badgeContainer}>
+//                           <Ionicons name={badgeIcon} size={24} color={Colors.WHITE} />
+//                         </View>
+//                       )}
+//                     </View>
+//                     <Text style={styles.courseDescription} numberOfLines={2}>
+//                       {course.description}
 //                     </Text>
+//                     <View style={styles.courseStatus}>
+//                       <Ionicons
+//                         name={isCompleted ? "checkmark-circle" : isUnlocked ? "lock-open" : "lock-closed"}
+//                        // name={isUnlocked ? "lock-open" : "lock-closed"}
+//                         size={24}
+//                         color={Colors.WHITE}
+//                       />
+//                       <Text style={styles.statusText}>
+//                          {isCompleted ? "Completat" : isUnlocked ? "Deblocat" : "Blocat"} 
+//                          {/* {isUnlocked ? "Deblocat" : "Blocat"} */}
+//                       </Text>
+//                     </View>
 //                   </View>
-//                 </View>
-//               </TouchableOpacity>
-//             </View>
-//           );
-//         })}
-//       </View>
-//     </ScrollView>
+//                 </TouchableOpacity>
+//               </View>
+//             );
+//           })}
+//         </View>
+//       </ScrollView>
+//     </ImageBackground>
 //   );
 // }
 
 // const styles = StyleSheet.create({
 //   container: {
-//     paddingTop: 50,
+//     flex: 1,
 //     backgroundColor: Colors.WHITE,
+//   },
+//   scrollContainer: {
+//     paddingTop: 50,
+//     paddingBottom: 100,
 //     minHeight: '100%',
 //   },
 //   header: {
 //     padding: 20,
 //     alignItems: 'center',
+//     backgroundColor: 'rgba(255, 255, 255, 0.9)',
+//     borderRadius: 20,
+//     margin: 15,
+//     shadowColor: '#000',
+//     shadowOffset: { width: 0, height: 2 },
+//     shadowOpacity: 0.1,
+//     shadowRadius: 8,
+//     elevation: 5,
 //   },
 //   headerTitle: {
 //     fontFamily: 'outfit-bold',
-//     fontSize: 28,
-//     color: Colors.DARK,
+//     fontSize: 32,
+//     color: Colors.DARK_BLUE,
 //     marginBottom: 10,
 //   },
 //   headerSubtitle: {
@@ -199,25 +266,31 @@
 //     width: 200,
 //   },
 //   courseButton: {
-//     borderRadius: 15,
-//     padding: 15,
-//     elevation: 3,
+//     borderRadius: 20,
+//     padding: 20,
+//     elevation: 8,
 //     shadowColor: '#000',
-//     shadowOffset: { width: 0, height: 2 },
-//     shadowOpacity: 0.25,
-//     shadowRadius: 3.84,
+//     shadowOffset: { width: 0, height: 4 },
+//     shadowOpacity: 0.3,
+//     shadowRadius: 8,
 //   },
 //   completed: {
-//     backgroundColor: Colors.GREEN,
+//     backgroundColor: Colors.SUCCESS,
+//     borderColor: '#388E3C',
+//     borderWidth: 1,
 //   },
 //   unlocked: {
 //     backgroundColor: Colors.PRIMARY,
+//     borderColor: Colors.SECONDARY,
+//     borderWidth: 1,
 //   },
 //   locked: {
 //     backgroundColor: Colors.GRAY,
+//     borderColor: '#757575',
+//     borderWidth: 1,
 //   },
 //   courseContent: {
-//     gap: 8,
+//     gap: 12,
 //   },
 //   courseHeader: {
 //     flexDirection: 'row',
@@ -226,39 +299,63 @@
 //   },
 //   courseTitle: {
 //     fontFamily: 'outfit-bold',
-//     fontSize: 16,
+//     fontSize: 18,
 //     color: Colors.WHITE,
 //     flex: 1,
+//     textShadowColor: 'rgba(0, 0, 0, 0.3)',
+//     textShadowOffset: { width: 0, height: 1 },
+//     textShadowRadius: 2,
 //   },
 //   badgeContainer: {
 //     backgroundColor: 'rgba(255,255,255,0.2)',
 //     borderRadius: 20,
-//     padding: 5,
+//     padding: 8,
 //   },
 //   courseDescription: {
 //     fontFamily: 'outfit',
-//     fontSize: 12,
+//     fontSize: 14,
 //     color: Colors.WHITE,
 //     opacity: 0.9,
+//     lineHeight: 20,
 //   },
 //   courseStatus: {
 //     flexDirection: 'row',
 //     alignItems: 'center',
-//     gap: 5,
-//     marginTop: 5,
+//     gap: 8,
+//     marginTop: 8,
+//     backgroundColor: 'rgba(255,255,255,0.1)',
+//     padding: 8,
+//     borderRadius: 12,
 //   },
 //   statusText: {
-//     fontFamily: 'outfit',
+//     fontFamily: 'outfit-bold',
 //     fontSize: 14,
+//     color: Colors.WHITE,
 //   },
 // });
 
-///// VERSIUNE 2 
+
+
+
+
+
+
+
+
+
+
+/// VARIANTA 2 BUNA - de rvzt badges , nu cred ca au ce cauta aici 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
 
 // import { Ionicons } from '@expo/vector-icons';
 // import { useRouter } from 'expo-router';
-// import { collection, getDocs } from 'firebase/firestore';
+// import { arrayUnion, collection, doc, getDocs, updateDoc } from 'firebase/firestore';
 // import { useContext, useEffect, useState } from 'react';
 // import { Dimensions, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 // import Svg, { Path } from 'react-native-svg';
@@ -272,7 +369,6 @@
 //   const { userDetail } = useContext(UserDetailContext);
 //   const router = useRouter();
 //   const screenWidth = Dimensions.get('window').width;
-//   const screenHeight = Dimensions.get('screen').height;
 
 //   useEffect(() => {
 //     getCourses();
@@ -285,7 +381,7 @@
 //         ...doc.data(),
 //         docId: doc.id
 //       }));
-//       setCourses(coursesData.reverse()); // Reverse pentru a începe de jos
+//       setCourses(coursesData.sort((a, b) => a.id - b.id));
 //     } catch (error) {
 //       console.error("Error fetching courses:", error);
 //     } finally {
@@ -293,12 +389,36 @@
 //     }
 //   };
 
-//   const isCourseUnlocked = (courseTitle) => {
-//     return userDetail?.unlockedCourses?.includes(courseTitle);
+//   useEffect(() => {
+//     if (!loading && courses.length > 0) {
+//       courses.forEach(async (course) => {
+//         const userProgress = [...new Set((userDetail?.startedCourses?.[course.docId]?.completedChapters || []).map(Number))];
+//         const totalChapters = course?.chapters?.length || 0;
+//         const hasCompleted = userProgress.length === totalChapters;
+//         const alreadyHasBadge = userDetail?.badges?.includes(course.achievementBadge);
+
+//         if (hasCompleted && course.achievementBadge && !alreadyHasBadge) {
+//           try {
+//             await updateDoc(doc(db, 'users', userDetail.uid), {
+//               badges: arrayUnion(course.achievementBadge)
+//             });
+//           } catch (err) {
+//             console.error('⚠️ Eroare la actualizare insignă:', err);
+//           }
+//         }
+//       });
+//     }
+//   }, [loading, courses]);
+
+//   const isCourseUnlocked = (courseId) => {
+//     const started = userDetail?.startedCourses?.[courseId]?.completedChapters;
+//     return Array.isArray(started);
 //   };
 
-//   const isCourseCompleted = (courseId) => {
-//     return userDetail?.completedCourses?.includes(courseId);
+//   const isCourseCompleted = (course) => {
+//     const userProgress = userDetail?.startedCourses?.[course.docId]?.completedChapters || [];
+//     const totalChapters = course?.chapters?.length || 0;
+//     return userProgress.length === totalChapters;
 //   };
 
 //   const getBadgeIcon = (courseTitle) => {
@@ -319,13 +439,35 @@
 //     return null;
 //   };
 
-//   const handleCoursePress = (course) => {
-//     if (isCourseUnlocked(course.title)) {
-//       router.push({
-//         pathname: "/courseView/" + course.docId,
-//       });
+//   const handleCoursePress = async (course) => {
+//     if (isCourseUnlocked(course.docId)) {
+//       router.push({ pathname: "/courseView/" + course.docId });
 //     } else {
-//       alert('Finalizează cursul anterior pentru a debloca acest curs.');
+//       const unlockedCourses = {};
+//       courses.forEach(c => {
+//         if (c.id < course.id) {
+//           unlockedCourses[c.docId] = {
+//             completedChapters: userDetail?.startedCourses?.[c.docId]?.completedChapters || []
+//           };
+//         }
+//       });
+
+//       const updatedCourses = {
+//         ...userDetail.startedCourses,
+//         ...unlockedCourses,
+//         [course.docId]: {
+//           completedChapters: userDetail?.startedCourses?.[course.docId]?.completedChapters || []
+//         }
+//       };
+
+//       try {
+//         await updateDoc(doc(db, 'users', userDetail.uid), {
+//           startedCourses: updatedCourses
+//         });
+//         router.push({ pathname: "/courseView/" + course.docId });
+//       } catch (err) {
+//         console.error('⚠️ Eroare la deblocare cursuri anterioare:', err);
+//       }
 //     }
 //   };
 
@@ -341,15 +483,18 @@
 //           <View style={styles.progressBar}>
 //             <View style={[styles.progressFill, { width: `${(userDetail?.points % 100)}%` }]} />
 //           </View>
-//           <Text style={styles.pointsText}>{userDetail?.points || 0} puncte • {100 - (userDetail?.points % 100)} până la următorul nivel</Text>
+//           <Text style={styles.pointsText}>
+//             {userDetail?.points || 0} puncte • {100 - (userDetail?.points % 100)} până la următorul nivel
+//           </Text>
 //         </View>
 
 //         <View style={styles.roadmapContainer}>
 //           <Svg height={courses.length * 250} width={screenWidth}>
 //             <Path
-//               d={`M${screenWidth/2} ${courses.length * 250} ${courses.map((_, i) => {
-//                 const y = (courses.length - i - 1) * 250;
-//                 return `Q${i % 2 ? screenWidth/2 + 80 : screenWidth/2 - 80} ${y + 125} ${screenWidth/2} ${y}`;
+//               d={`M${screenWidth/2} 0 ${courses.map((_, i) => {
+//                 const y = i * 250;
+//                 const controlX = i % 2 ? screenWidth/2 + 120 : screenWidth/2 - 120;
+//                 return `Q${controlX} ${y + 160} ${screenWidth/2} ${y + 250}`;
 //               }).join(' ')}`}
 //               fill="none"
 //               stroke={Colors.PRIMARY}
@@ -360,11 +505,11 @@
 //           </Svg>
 
 //           {courses.map((course, index) => {
-//             const isUnlocked = isCourseUnlocked(course.title);
-//             const isCompleted = isCourseCompleted(course.docId);
+//             const isUnlocked = isCourseUnlocked(course.docId);
+//             const isCompleted = isCourseCompleted(course);
 //             const badgeIcon = getBadgeIcon(course.title);
 //             const isLeft = index % 2 === 0;
-//             const verticalPosition = (courses.length - index - 1) * 250;
+//             const verticalPosition = index * 250;
 
 //             return (
 //               <View
@@ -374,6 +519,7 @@
 //                   {
 //                     top: verticalPosition,
 //                     left: isLeft ? 20 : screenWidth - 220,
+//                     opacity: isUnlocked || isCompleted ? 1 : 0.6,
 //                   }
 //                 ]}
 //               >
@@ -383,7 +529,6 @@
 //                     isCompleted ? styles.completed : isUnlocked ? styles.unlocked : styles.locked
 //                   ]}
 //                   onPress={() => handleCoursePress(course)}
-//                   disabled={!isUnlocked}
 //                 >
 //                   <View style={styles.courseContent}>
 //                     <View style={styles.courseHeader}>
@@ -401,7 +546,7 @@
 //                       <Ionicons
 //                         name={isCompleted ? "checkmark-circle" : isUnlocked ? "lock-open" : "lock-closed"}
 //                         size={24}
-//                         color={isCompleted ? Colors.WHITE : isUnlocked ? Colors.WHITE : Colors.WHITE}
+//                         color={Colors.WHITE}
 //                       />
 //                       <Text style={styles.statusText}>
 //                         {isCompleted ? "Completat" : isUnlocked ? "Deblocat" : "Blocat"}
@@ -487,17 +632,17 @@
 //     shadowRadius: 8,
 //   },
 //   completed: {
-//     backgroundColor: '#4CAF50',
+//     backgroundColor: Colors.SUCCESS,
 //     borderColor: '#388E3C',
 //     borderWidth: 1,
 //   },
 //   unlocked: {
-//     backgroundColor: '#1976D2',
-//     borderColor: '#1565C0',
+//     backgroundColor: Colors.PRIMARY,
+//     borderColor: Colors.SECONDARY,
 //     borderWidth: 1,
 //   },
 //   locked: {
-//     backgroundColor: '#9E9E9E',
+//     backgroundColor: Colors.GRAY,
 //     borderColor: '#757575',
 //     borderWidth: 1,
 //   },
@@ -547,11 +692,9 @@
 // });
 
 
-///// VERSIUNE 3
-
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
-import { collection, getDocs } from 'firebase/firestore';
+import { arrayUnion, collection, doc, getDocs, updateDoc } from 'firebase/firestore';
 import { useContext, useEffect, useState } from 'react';
 import { Dimensions, ImageBackground, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
@@ -565,7 +708,6 @@ export default function CourseRoadmap() {
   const { userDetail } = useContext(UserDetailContext);
   const router = useRouter();
   const screenWidth = Dimensions.get('window').width;
-  const screenHeight = Dimensions.get('screen').height;
 
   useEffect(() => {
     getCourses();
@@ -578,7 +720,7 @@ export default function CourseRoadmap() {
         ...doc.data(),
         docId: doc.id
       }));
-      setCourses(coursesData.reverse()); // Reverse pentru a începe de jos
+      setCourses(coursesData.sort((a, b) => a.id - b.id));
     } catch (error) {
       console.error("Error fetching courses:", error);
     } finally {
@@ -586,12 +728,36 @@ export default function CourseRoadmap() {
     }
   };
 
-  const isCourseUnlocked = (courseTitle) => {
-    return userDetail?.unlockedCourses?.includes(courseTitle);
+  useEffect(() => {
+    if (!loading && courses.length > 0) {
+      courses.forEach(async (course) => {
+        const userProgress = [...new Set((userDetail?.startedCourses?.[course.docId]?.completedChapters || []).map(Number))];
+        const totalChapters = course?.chapters?.length || 0;
+        const hasCompleted = userProgress.length === totalChapters;
+        const alreadyHasBadge = userDetail?.badges?.includes(course.achievementBadge);
+
+        if (hasCompleted && course.achievementBadge && !alreadyHasBadge) {
+          try {
+            await updateDoc(doc(db, 'users', userDetail.uid), {
+              badges: arrayUnion(course.achievementBadge)
+            });
+          } catch (err) {
+            console.error('⚠️ Eroare la actualizare insignă:', err);
+          }
+        }
+      });
+    }
+  }, [loading, courses]);
+
+  const isCourseUnlocked = (courseId) => {
+    const started = userDetail?.startedCourses?.[courseId]?.completedChapters;
+    return Array.isArray(started);
   };
 
-  const isCourseCompleted = (courseId) => {
-    return userDetail?.completedCourses?.includes(courseId);
+  const isCourseCompleted = (course) => {
+    const userProgress = userDetail?.startedCourses?.[course.docId]?.completedChapters || [];
+    const totalChapters = course?.chapters?.length || 0;
+    return userProgress.length === totalChapters;
   };
 
   const getBadgeIcon = (courseTitle) => {
@@ -612,13 +778,35 @@ export default function CourseRoadmap() {
     return null;
   };
 
-  const handleCoursePress = (course) => {
-    if (isCourseUnlocked(course.title)) {
-      router.push({
-        pathname: "/courseView/" + course.docId,
-      });
+  const handleCoursePress = async (course) => {
+    if (isCourseUnlocked(course.docId)) {
+      router.push({ pathname: "/courseView/" + course.docId });
     } else {
-      alert('Finalizează cursul anterior pentru a debloca acest curs.');
+      const unlockedCourses = {};
+      courses.forEach(c => {
+        if (c.id < course.id) {
+          unlockedCourses[c.docId] = {
+            completedChapters: userDetail?.startedCourses?.[c.docId]?.completedChapters || []
+          };
+        }
+      });
+
+      const updatedCourses = {
+        ...userDetail.startedCourses,
+        ...unlockedCourses,
+        [course.docId]: {
+          completedChapters: userDetail?.startedCourses?.[course.docId]?.completedChapters || []
+        }
+      };
+
+      try {
+        await updateDoc(doc(db, 'users', userDetail.uid), {
+          startedCourses: updatedCourses
+        });
+        router.push({ pathname: "/courseView/" + course.docId });
+      } catch (err) {
+        console.error('⚠️ Eroare la deblocare cursuri anterioare:', err);
+      }
     }
   };
 
@@ -634,30 +822,33 @@ export default function CourseRoadmap() {
           <View style={styles.progressBar}>
             <View style={[styles.progressFill, { width: `${(userDetail?.points % 100)}%` }]} />
           </View>
-          <Text style={styles.pointsText}>{userDetail?.points || 0} puncte • {100 - (userDetail?.points % 100)} până la următorul nivel</Text>
+          <Text style={styles.pointsText}>
+            {userDetail?.points || 0} puncte • {100 - (userDetail?.points % 100)} până la următorul nivel
+          </Text>
         </View>
 
         <View style={styles.roadmapContainer}>
-          <Svg height={courses.length * 250} width={screenWidth}>
+          <Svg height={courses.length * 250} width={screenWidth} style={{ transform: [{ rotate: '180deg' }] }}>
             <Path
-              d={`M${screenWidth/2} ${courses.length * 250} ${courses.map((_, i) => {
-                const y = (courses.length - i - 1) * 250;
-                return `Q${i % 2 ? screenWidth/2 + 120 : screenWidth/2 - 120} ${y + 160} ${screenWidth/2} ${y}`;
+              d={`M${screenWidth/2} 0 ${courses.map((_, i) => {
+                const y = i * 250;
+                const controlX = i % 2 ? screenWidth/2 + 120 : screenWidth/2 - 120;
+                return `Q${controlX} ${y + 160} ${screenWidth/2} ${y + 250}`;
               }).join(' ')}`}
               fill="none"
               stroke={Colors.PRIMARY}
-              strokeWidth={5}
+              strokeWidth={3}
               strokeDasharray="8,8"
               strokeLinecap="round"
             />
           </Svg>
 
           {courses.map((course, index) => {
-            const isUnlocked = isCourseUnlocked(course.title);
-            const isCompleted = isCourseCompleted(course.docId);
+            const isUnlocked = isCourseUnlocked(course.docId);
+            const isCompleted = isCourseCompleted(course);
             const badgeIcon = getBadgeIcon(course.title);
             const isLeft = index % 2 === 0;
-            const verticalPosition = (courses.length - index - 1) * 250;
+            const verticalPosition = (courses.length - 1 - index) * 250;
 
             return (
               <View
@@ -667,6 +858,7 @@ export default function CourseRoadmap() {
                   {
                     top: verticalPosition,
                     left: isLeft ? 20 : screenWidth - 220,
+                    opacity: isUnlocked || isCompleted ? 1 : 0.6,
                   }
                 ]}
               >
@@ -676,7 +868,6 @@ export default function CourseRoadmap() {
                     isCompleted ? styles.completed : isUnlocked ? styles.unlocked : styles.locked
                   ]}
                   onPress={() => handleCoursePress(course)}
-                  disabled={!isUnlocked}
                 >
                   <View style={styles.courseContent}>
                     <View style={styles.courseHeader}>
@@ -694,7 +885,7 @@ export default function CourseRoadmap() {
                       <Ionicons
                         name={isCompleted ? "checkmark-circle" : isUnlocked ? "lock-open" : "lock-closed"}
                         size={24}
-                        color={isCompleted ? Colors.WHITE : isUnlocked ? Colors.WHITE : Colors.WHITE}
+                        color={Colors.WHITE}
                       />
                       <Text style={styles.statusText}>
                         {isCompleted ? "Completat" : isUnlocked ? "Deblocat" : "Blocat"}
@@ -780,17 +971,17 @@ const styles = StyleSheet.create({
     shadowRadius: 8,
   },
   completed: {
-    backgroundColor: '#4CAF50',
+    backgroundColor: Colors.SUCCESS,
     borderColor: '#388E3C',
     borderWidth: 1,
   },
   unlocked: {
-    backgroundColor: '#1976D2',
-    borderColor: '#1565C0',
+    backgroundColor: Colors.PRIMARY,
+    borderColor: Colors.SECONDARY,
     borderWidth: 1,
   },
   locked: {
-    backgroundColor: '#9E9E9E',
+    backgroundColor: Colors.GRAY,
     borderColor: '#757575',
     borderWidth: 1,
   },

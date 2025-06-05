@@ -33,9 +33,13 @@ export const PracticeOption=
 export const imageAssets=
 {
  '/banner2.png':require('./../assets/images/banner2.png'),
- '/banner3.png':require('./../assets/images/banner3.png'),
+ '/banner3.png':require('./../assets/images/banner3.webp'),
  '/banner4.png':require('./../assets/images/banner4.png'),
- '/banner5.png':require('./../assets/images/banner5.png')
+ '/banner5.png':require('./../assets/images/banner5.png'),
+  '/cap3.png':require('./../assets/images/cap3.png'),
+  '/cap4.jpg':require('./../assets/images/cap4.jpg'),
+  '/cap5.jpg':require('./../assets/images/cap5.jpg'),
+  '/cap6.png':require('./../assets/images/cap6.png'),
 }
 
 export const ProfileMenu = [
@@ -50,10 +54,15 @@ export const ProfileMenu = [
         path: '/(tabs)/progress'
     },
     {
-        name: 'Simulator atacuri',
-        icon: 'shield-outline',
-        path: '/(tabs)/simulator'
+        name: 'Clasament',
+    icon: 'trophy-outline',
+    path: '/leaderboard'
     },
+    // {
+    //     name: 'Simulator atacuri',
+    //     icon: 'shield-outline',
+    //     path: '/(tabs)/simulator'
+    // },
     {
         name: 'Logout',
         icon: 'log-out', //Ionic Icons 

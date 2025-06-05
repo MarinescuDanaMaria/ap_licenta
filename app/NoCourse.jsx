@@ -27,7 +27,7 @@ export default function NoCourse() {
         marginTop:15
       }}>Nu ai început nici o secțiune.</Text>
 
-      <Button text={'Începe un curs'} onPress={()=>router.push('/addCourse')}/>
+      <Button text={'Începe un curs'} onPress={()=>router.push('/(tabs)/home')}/>
     </SafeAreaView>
   )
 }
