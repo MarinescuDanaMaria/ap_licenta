@@ -14,6 +14,8 @@ npm install react-native-vector-icons
 
 npm install react-native-markdown-display
 
+npm install openai
+
 PENTRU A ADAUGA/ ACTUALIZA CURSURILE : modif fisierul CoursesData.js , dupa rulam
 
 node seedCourses.js
@@ -54,3 +56,7 @@ node seedCourses.js
   - Citirea conținutului ( pentru cand esti plecat - ca un fel de audiobook )
 
 // de refacut tabelele in json si dupa uploadat si veriif inca o data restul
+
+// api openAi cheie :
+
+sk-proj-jeFBuQk4c284kIrSaPt\_\_E4wKaRkFzipJPTUsL2xlSJoj21TOaC3KdOHRGk7Lb21wIYGZZ6aoGT3BlbkFJsgvkr-TtrFbpPcAIZYKteGeEjR4sxEktOtL2asEA09fTiNAxHTCqdHLoFpqeI5Eni4UBELZ0IA
